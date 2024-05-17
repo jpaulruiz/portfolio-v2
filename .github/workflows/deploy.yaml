@@ -47,7 +47,7 @@ jobs:
       - name: Install dependencies
         run: pnpm i --frozen-lockfile
       - name: Build
-        run: pnpm build
+        run: pnpm build --base=$BASE_URL
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
