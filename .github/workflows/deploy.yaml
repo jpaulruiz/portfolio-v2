@@ -28,11 +28,6 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - name: Use variables
-        run: |
-          echo "BASE_URL : $BASE_URL"
-        env:
-          BASE_URL: ${{ vars.BASE_URL }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install pnpm
@@ -48,6 +43,8 @@ jobs:
         run: pnpm i --frozen-lockfile
       - name: Build
         run: pnpm build --base=$BASE_URL
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
