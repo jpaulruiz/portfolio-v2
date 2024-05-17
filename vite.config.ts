@@ -4,7 +4,6 @@ import vue from '@vitejs/plugin-vue'
 
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  console.log(env)
 
   return {
     base: env.BASE_URL,
