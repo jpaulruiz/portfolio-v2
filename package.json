@@ -9,7 +9,6 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@types/node": "^20.12.12",
     "@unhead/vue": "^1.9.10",
     "@vitejs/plugin-vue": "^5.0.4",
     "lightningcss": "^1.24.1",
