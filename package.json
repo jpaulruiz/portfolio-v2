@@ -1,0 +1,21 @@
+{
+  "name": "portfolio-v2",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite-ssg build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@unhead/vue": "^1.9.10",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "normalize.css": "^8.0.1",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-ssg": "^0.23.7",
+    "vue": "^3.4.21",
+    "vue-tsc": "^2.0.6"
+  }
+}
