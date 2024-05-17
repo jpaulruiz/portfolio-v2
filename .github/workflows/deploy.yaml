@@ -28,6 +28,11 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
+      - name: Use variables
+        run: |
+          echo "BASE_URL : $BASE_URL"
+        env:
+          BASE_URL: ${{ vars.BASE_URL }}
       - name: Checkout
         uses: actions/checkout@v4
       - name: Install pnpm
