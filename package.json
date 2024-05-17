@@ -11,6 +11,7 @@
   "devDependencies": {
     "@unhead/vue": "^1.9.10",
     "@vitejs/plugin-vue": "^5.0.4",
+    "lightningcss": "^1.24.1",
     "normalize.css": "^8.0.1",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
