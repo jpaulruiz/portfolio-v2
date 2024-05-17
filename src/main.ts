@@ -1,4 +1,3 @@
-import 'normalize.css'
 import { ViteSSG } from 'vite-ssg/single-page'
 import App from './App.vue'
 
