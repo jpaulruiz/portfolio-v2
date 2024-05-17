@@ -16,6 +16,7 @@ useSeoMeta({
     initialScale: 1
   },
   title: 'jpaulruiz',
+  description: 'jpmruiz-portfolio-v2'
 })
 
 const isDarkMode = ref(true)
