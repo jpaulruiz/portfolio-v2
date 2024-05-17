@@ -5,8 +5,9 @@
   "packageManager": "pnpm@9.1.1+sha256.9551e803dcb7a1839fdf5416153a844060c7bce013218ce823410532504ac10b",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc && vite-ssg build",
-    "preview": "vite preview"
+    "build": "vite-ssg build",
+    "preview": "vite preview",
+    "typecheck": "vue-tsc"
   },
   "devDependencies": {
     "@fontsource-variable/montserrat": "^5.0.19",
