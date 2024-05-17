@@ -3,17 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { useHead, useSeoMeta } from '@unhead/vue'
-
-useHead({
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/svg+xml',
-      href: '/vite.svg'
-    }
-  ]
-})
+import { useSeoMeta } from '@unhead/vue'
 
 useSeoMeta({
   charset: 'utf-8',
