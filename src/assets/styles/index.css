@@ -5,13 +5,9 @@
   --text-logo-primary: #D81E5B;
 
   --switch-bg: #D81E5B;
-  --swtich-circle: #FFFFFF;
-}
+  --switch-circle: #FFFFFF;
 
-* {
-  font-family: "Montserrat Variable", Georgia, 'Times New Roman', Times, serif;
-  margin: 0;
-  padding: 0;
+  --background-primary: #FFFFFF;
 }
 
 .dark-mode {
@@ -21,5 +17,19 @@
   --text-logo-primary: #D81E5B;
 
   --switch-bg: #D81E5B;
-  --swtich-circle: #1A1A1F;
+  --switch-circle: #1A1A1F;
+
+  --background-primary: #18181A;
+}
+
+* {
+  font-family: "Montserrat Variable", Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+.main-container {
+  min-height: 100vh;
+  background-color: var(--background-primary);
 }

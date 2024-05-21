@@ -5,8 +5,8 @@
 </template>
 
 <script setup lang="ts">
-import { useSeoMeta } from '@unhead/vue'
 import Navbar from './components/Navbar/index.vue'
+import { useSeoMeta } from '@unhead/vue'
 import { ref } from 'vue'
 
 useSeoMeta({

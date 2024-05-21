@@ -6,8 +6,21 @@
       <li><a href="#about">ABOUT</a></li>
       <li><a href="#contact">CONTACT</a></li>
     </ul>
+    <Switch 
+      :value="model"
+      @toggle="toggle"/>
   </nav>
 </template>
+
+<script lang="ts" setup>
+import Switch from '../Buttons/Switch/index.vue'
+
+const model = defineModel<boolean>({ default: false })
+
+const toggle = (e: boolean) => {
+    model.value = e
+}
+</script>
 
 <style scoped>
 nav {
@@ -23,14 +36,30 @@ nav {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
+  padding: 0 10rem;
 }
 
 a {
   text-decoration: none;
-}
+  position: relative;
 
-nav span {
-  margin-left: 10rem;
+  &::after {
+    content: '';
+    height: 0.5rem;
+    left: 0.2rem;
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    width: 110%;
+    background-color: var(--text-logo-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-in-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
 }
 
 nav span a {
@@ -39,7 +68,6 @@ nav span a {
 }
 
 nav ul {
-  margin-right: 10rem;
   display: flex;
   gap: 2rem;
 }
@@ -51,6 +79,7 @@ li {
 
 li a {
   color: var(--text-primary);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
 }
 </style>
