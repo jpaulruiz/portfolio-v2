@@ -58,7 +58,7 @@ const toggle = () => {
   border-radius: 50%;
   margin-top: 0.1875rem;
   margin-left: 0.25rem; 
-  transition: left 0.2s ease, transform 2s ease;
+  transition: left 0.2s ease, transform 1s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -66,8 +66,8 @@ const toggle = () => {
 
 .switched {
   left: 2.1875rem;
-  transform: rotate(45deg);
-  transition: left 0.2s ease, transform 2s ease;
+  transform: rotate(270deg);
+  transition: left 0.2s ease, transform 1s ease;
   color: white;
 }
 </style>

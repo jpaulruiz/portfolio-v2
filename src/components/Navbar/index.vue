@@ -1,6 +1,8 @@
 <template>
   <nav>
-    <span><a href="#home">RUIZ</a></span>
+    <span>
+      <img src="/src/assets/styles/logo.png" alt="Logo Image">
+    </span>
     <ul>
       <li><a href="#home">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
@@ -65,9 +67,9 @@ li a {
   }
 }
 
-nav span a {
-  color: var(--text-logo-primary);
-  font-size: 2rem;
+img {
+  width: 3rem;
+  height: auto;
 }
 
 nav ul {
