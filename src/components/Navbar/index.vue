@@ -41,6 +41,9 @@ nav {
 
 a {
   text-decoration: none;
+}
+
+li a {
   position: relative;
 
   &::after {
