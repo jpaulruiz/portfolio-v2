@@ -8,6 +8,7 @@
   --switch-circle: #FFFFFF;
 
   --background-primary: #FFFFFF;
+  --cursor-background: radial-gradient(circle closest-side, #d49aad, transparent 80%);
 }
 
 .dark-mode {
@@ -20,6 +21,7 @@
   --switch-circle: #1A1A1F;
 
   --background-primary: #18181A;
+  --cursor-background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
 }
 
 * {

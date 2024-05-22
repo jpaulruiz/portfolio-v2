@@ -39,6 +39,7 @@ nav {
   justify-content: space-between;
   font-weight: bold;
   padding: 0 10rem;
+  z-index: 999;
 }
 
 a {
