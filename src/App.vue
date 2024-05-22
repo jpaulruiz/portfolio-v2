@@ -1,20 +1,18 @@
 <template>
-  <div :class="{ 'dark-mode': isDarkMode }">
-    <Navbar v-model="isDarkMode"/>
-    <div
-      class="main-container"
-      :style="{
+  <div
+    :class="['main-container', { 'dark-mode': isDarkMode }]"
+    :style="{
         '--x': `${x}px`,
         '--y': `${y}px`,
         '--cursor-background': isDarkMode ? 
           `radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%)`:
           `radial-gradient(circle closest-side, #d49aad, transparent 80%)`
       }">
-      <Wobble />
-      <Wobble />
-      <Wobble />
-      <Wobble />
-    </div>
+    <Navbar v-model="isDarkMode"/>
+    <Wobble color="#D81E5B" :is-dark-mode="isDarkMode"/>
+    <Wobble color="#B8D81E" :is-dark-mode="isDarkMode"/>
+    <Wobble color="#1ED89B" :is-dark-mode="isDarkMode"/>
+    <Wobble color="#3E1ED8" :is-dark-mode="isDarkMode"/>
   </div>
 </template>
 
@@ -34,7 +32,7 @@ useSeoMeta({
   description: 'jpmruiz-portfolio-v2'
 })
 
-const isDarkMode = ref(false)
+const isDarkMode = ref(true)
 const x = ref(0)
 const y = ref(0)
 
@@ -50,15 +48,15 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
 <style src="./src/assets/styles/index.css"></style>
 <style scoped>
 .main-container {
+  position: relative;
   width: 100vw;
   height: 100vh;
-  padding-top: 4.125rem;
-  position: relative;
+  overflow: hidden;
 
   &:before {
     --size: 0;
     content: '';
-    position: absolute;
+    position: fixed;
     left: var(--x);
     top: var(--y);
     width: var(--size);
@@ -67,13 +65,8 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
     transform: translate(-50%, -50%);
     transition: width 0.2s ease, height 0.2s ease;
   }
-
   &:hover::before {
     --size: 90rem;
-  }
-
-  @media only screen and (max-width: 1090px) {
-    overflow: scroll;
   }
 }
 </style>

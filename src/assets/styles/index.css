@@ -1,13 +1,13 @@
 :root {
-  --nav-bg: #FFFFFF;
+  --nav-bg: #fcf3f6;
 
   --text-primary: #18181A;
   --text-logo-primary: #D81E5B;
 
   --switch-bg: #D81E5B;
-  --switch-circle: #FFFFFF;
+  --switch-circle: #fcf3f6;
 
-  --background-primary: #FFFFFF;
+  --background-primary: #d6c8cc;
   --cursor-background: radial-gradient(circle closest-side, #d49aad, transparent 80%);
 }
 
