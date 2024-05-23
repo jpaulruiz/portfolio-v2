@@ -40,7 +40,7 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
   position: relative;
   overflow: hidden;
 
-  &:before {
+  &::before {
     --size: 0;
     content: '';
     position: absolute;
