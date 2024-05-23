@@ -9,16 +9,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, inject } from 'vue'
 // #region Props
 interface Props {
   color: string
-  isDarkMode: boolean,
 }
 
 withDefaults(defineProps<Props>(), {
-  color: '#5BD81E',
-  isDarkMode: true
+  color: '#5BD81E'
 })
 // #endregion
 
@@ -31,6 +29,7 @@ interface Coordinates {
 const coordinates = reactive<Coordinates>({x: 0, y: 0})
 const translate = reactive<Coordinates>({x: 0, y: 0})
 const degrees = ref(0)
+const isDarkMode = inject('isDarkMode')
 // #endregion
 
 // #region Methods
