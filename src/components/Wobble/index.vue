@@ -2,16 +2,14 @@
   <div
     :style="{
     '--bg-color': `${color}`,
-    transform: isDarkMode ? `translate(${translate.x}vw, ${translate.y}vh)` 
-      : `translate(${coordinates.x}vw, ${coordinates.y}vh) rotate(${degrees}deg)`,
-    transition: isDarkMode ? `transform 1s ease`
-      : `transform 10s ease-in-out`
+    '--mx-type': isDarkMode ? 'luminosity' : 'screen',
+    transform: `translate(${coordinates.x}vw, ${coordinates.y}vh) rotate(${degrees}deg)`
   }">
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted, nextTick } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 // #region Props
 interface Props {
   color: string
@@ -52,10 +50,10 @@ const defaultTranslate = () => {
 onMounted(() => {
   valueGenerator()
   defaultTranslate()
-  nextTick(() => {
+  setTimeout(() => {
     valueGenerator()
     defaultTranslate()
-  })
+  }, 500)
   setInterval(() => {
     valueGenerator()
     defaultTranslate()
@@ -70,12 +68,14 @@ div {
   width: 3.5em;
   height: 3.5em;
   background: var(--bg-color);
-  mix-blend-mode: screen;
+  mix-blend-mode: var(--mx-type);
   font-size: 17vmin;
+  border-radius: 50%;
   box-shadow: inset 0 0 .5em .2em #000, 0 0 .15em 0 #fff;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 10s ease-in-out;
   /* animation: wobble 2s linear infinite; */
 }
 
