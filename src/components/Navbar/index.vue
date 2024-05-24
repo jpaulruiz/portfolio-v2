@@ -1,7 +1,7 @@
 <template>
   <nav>
     <span>
-      <img src="/src/assets/styles/logo.png" alt="Logo Image">
+      <img src="/src/assets/logo.png" alt="Logo Image">
     </span>
     <ul>
       <li><a href="#home">HOME</a></li>
