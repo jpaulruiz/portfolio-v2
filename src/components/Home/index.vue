@@ -27,7 +27,7 @@ import Wobble from '../Wobble/index.vue'
 <style scoped>
 .home-container {
   width: 100vw;
-  height: calc(100vh - 4.125rem);
+  height: 100vh;
 
   section {
     font-size: 2rem;

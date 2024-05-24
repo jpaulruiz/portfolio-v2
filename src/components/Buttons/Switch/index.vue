@@ -40,7 +40,7 @@ const toggle = () => {
   width: 4.875rem;
   height: 2.625rem;
   box-sizing: border-box;
-  background-color: var(--switch-bg);
+  background: var(--switch-bg);
   border-radius: 1rem;
   border-radius: 50px;
   position: relative;

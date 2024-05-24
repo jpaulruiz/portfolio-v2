@@ -3,10 +3,12 @@
     id="about" 
     class="about-container"
   >
-    <div>
+    <div class="content">
+      <h2>About Me</h2>
+      <hr>
     </div>
     <div class="image">
-      <div><img src="/src/assets/roycee.png" alt="Me Image"></div>
+      <div><img src="/src/assets/ruiz.avif" alt="Me Image"></div>
       <div></div>
     </div>
   </div>
@@ -21,34 +23,71 @@
   height: 100vh;
   padding-top: 8.25rem;
   display: flex;
+  flex: 1;
   position: relative;
   justify-content: space-around;
+  --image-bg: luminosity;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  color: var(--text-primary);
+
+  h2 {
+    position: relative;
+    font-size: 2.5rem;
+  }
+
+  .content {
+    hr {
+      border-style: none;
+      border-bottom: 0;
+      border-top: 2px solid var(--text-primary);
+      width: 40vw;
+      margin-top: 12px;
+      margin-bottom: 0;
+    }
+  }
 
   .image {
     position: relative;
-  }
 
-  .image > div {
-    overflow: clip;
-    position: absolute;
-    left: -10vw;
-    border-radius: 40px;
+    &:hover {
+      --image-bg: normal;
+    }
+
+    &:hover > div ~ div {
+       transform: translate(-2.5%, -2.5%);
+    }
+
+    &:hover > div {
+      transform: translate(2.5%, 2.5%);
+    }
   }
 
   div.image > div:nth-child(2) {
     width: 30vmax;
     height: 60vmin;
     position: absolute;
-    left: -15vw;
-    top: -5vh;
-    border: 1px solid black;
+    left: -21vw;
+    top: -4vh;
+    border: 0.1rem solid #D81E5B;
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .image > div {
+    overflow: clip;
+    position: absolute;
+    left: -19vw;
+    border-radius: 40px;
+    transition: transform 0.2s ease-in-out;
   }
 
   img {
     width: 30vmax;
     height: 60vmin;
     object-fit: cover;
-    mix-blend-mode: luminosity;
+    mix-blend-mode: var(--image-bg);
   }
 }
 </style>
