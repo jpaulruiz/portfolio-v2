@@ -3,47 +3,74 @@
     id="home" 
     class="home-container"
   >
-    <Wobble color="#D81E5B"/>
-    <Wobble color="#B8D81E"/>
-    <Wobble color="#1ED89B"/>
-    <Wobble color="#3E1ED8"/>
     <section>
       <div class="introduction">
-        <p>Hi, my name is</p>
-        <p>RUIZ</p>
+        <p>JP RUIZ</p>
       </div>
       <div class="description">
-        <p>Software Engineer.</p>
-        <p>Translates designs into reality.</p>
+        <p>Software Engineer</p>
+        <p>Translates <span>{{ word }}</span> <br>into reality.</p>
       </div>
+      <Navigation 
+        class="navigation"
+        :options="navOptions" 
+      />
+    </section>
+    <section>
+
     </section>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Wobble from '../Wobble/index.vue'
+import { ref } from 'vue'
+import Navigation from '../Navigation/index.vue'
+
+const words = [
+  "designs",
+  "visions",
+  "concepts"
+]
+
+const navOptions = [
+  "HOME",
+  "EXPERIENCE",
+  "CONTACT"
+]
+
+const word = ref(words[0])
+let index = 0
+
+setInterval(() => {
+  setTimeout(() => {
+    word.value = words[index]
+    index = (index + 1) % words.length
+  }, 500)
+}, 2000)
 </script>
 
 <style scoped>
 .home-container {
-  width: 100vw;
-  height: 100vh;
+  margin: 2rem;
+  padding: 2rem;
+  height: calc(100vh - 4rem);
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 
   section {
     font-size: 2rem;
     position: relative;
     color: var(--text-primary);
     font-weight: bold;
-    text-wrap: wrap;
   }
 
   .introduction {
-    transform: translate(15vw, 20vh);
-    width: 30vw;
-
-    p + p {
-      text-align: right;
-      font-size: 8rem;
+    & > p {
+      font-size: 4rem;
+      text-wrap: nowrap;
       background-clip: text;
       color: transparent;
       -webkit-background-clip: text;
@@ -56,12 +83,24 @@ import Wobble from '../Wobble/index.vue'
   }
 
   .description {
-    transform: translate(45vw, 35vh);
-    width: 50vw;
+    p {
+      margin-top: 1rem;
+    }
+
+    & > p {
+      font-size: 1rem;
+    }
 
     p + p {
-      font-size: 3rem;
+      font-size: 1rem;
     }
+  }
+
+  .navigation {
+    transform: translate(10rem, 10rem);
+    font-style: italic;
+    font-size: 4rem;
+    position: absolute;
   }
 }
 

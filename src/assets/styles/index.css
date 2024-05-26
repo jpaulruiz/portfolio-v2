@@ -6,7 +6,9 @@
 
   --switch-bg: #D81E5B;
   --switch-gradient-bg: linear-gradient(90deg, #D81E5B 2.77%, #d077d3 42.12%, #D81E5B) padding-box;
-  --switch-circle: #fcf3f6;
+  --switch-circle: #FFFFFF;
+
+  --border-color: #D81E5B;
 
   --background-primary: #d6c8cc;
   --cursor-background: radial-gradient(circle closest-side, #d49aad, transparent 80%);
@@ -18,8 +20,10 @@
   --text-primary: #FFFFFF;
   --text-logo-primary: #D81E5B;
 
-  --switch-bg: #D81E5B;
+  --switch-bg: #505055;
   --switch-circle: #1A1A1F;
+
+  --border-color: #c7c6c6;
 
   --background-primary: #18181A;
   --cursor-background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
@@ -30,7 +34,7 @@ html {
 }
 
 * {
-  font-family: "Montserrat Variable", Georgia, 'Times New Roman', Times, serif;
+  font-family: 'IBM Plex Mono', 'Montserrat Variable', Georgia, 'Times New Roman', Times, serif;
   margin: 0;
   padding: 0;
 }
@@ -39,4 +43,12 @@ html {
 .main-container {
   min-height: 100vh;
   background-color: var(--background-primary);
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }

@@ -26,7 +26,7 @@ const emit = defineEmits<{
 // #endregion
 
 // #region Methods
-const icon = ref('moon-stroke')
+const icon = ref('sun')
 const toggle = () => {
   emit('toggle', !props.value)
   icon.value = props.value ? 'moon-stroke' : 'sun'
@@ -37,8 +37,8 @@ const toggle = () => {
 
 <style scoped>
 .switch-body {
-  width: 4.875rem;
-  height: 2.625rem;
+  width: 2.4375rem;
+  height: 1.3125rem;
   box-sizing: border-box;
   background: var(--switch-bg);
   border-radius: 1rem;
@@ -53,11 +53,11 @@ const toggle = () => {
   left: 0;
   top: 0;
   background-color: var(--switch-circle);
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 1.125rem;
+  height: 1.125rem;
   border-radius: 50%;
-  margin-top: 0.1875rem;
-  margin-left: 0.25rem; 
+  margin-top: 0.09375rem;
+  margin-left: 0.125rem; 
   transition: left 0.2s ease, transform 1s ease;
   display: flex;
   justify-content: center;
@@ -65,7 +65,7 @@ const toggle = () => {
 }
 
 .switched {
-  left: 2.1875rem;
+  left: 1.09375rem;
   transform: rotate(270deg);
   transition: left 0.2s ease, transform 1s ease;
   color: white;

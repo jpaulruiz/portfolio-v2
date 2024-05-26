@@ -21,7 +21,6 @@
 .about-container {
   width: 100vw;
   height: 100vh;
-  padding-top: 8.25rem;
   display: flex;
   flex: 1;
   position: relative;

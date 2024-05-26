@@ -8,19 +8,27 @@
         `radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%)`:
         `radial-gradient(circle closest-side, #d49aad, transparent 80%)`
     }">
-    <Navbar v-model="isDarkMode"/>
+    <Wobble color="#D81E5B"/>
+    <Wobble color="#B8D81E"/>
+    <Wobble color="#1ED89B"/>
+    <Wobble color="#3E1ED8"/>
     <Home />
-    <About />
+    <div 
+      class="switch">
+      <Switch 
+        :value="isDarkMode"
+        @toggle="toggle"/>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import Navbar from '../Navbar/index.vue'
 import Home from '../Home/index.vue'
-import About from '../About/index.vue'
+import Switch from '../Buttons/Switch/index.vue'
+import Wobble from '../Wobble/index.vue'
 import { ref, onMounted, onUnmounted, provide } from 'vue'
 
-const isDarkMode = ref(false)
+const isDarkMode = ref(true)
 provide('isDarkMode', isDarkMode)
 const x = ref(0)
 const y = ref(0)
@@ -28,6 +36,10 @@ const y = ref(0)
 const update = (event: MouseEvent) => {
   x.value = event.pageX
   y.value = event.pageY
+}
+
+const toggle = (e: boolean) => {
+    isDarkMode.value = e
 }
 
 onMounted(() => window.addEventListener('mousemove', update))
@@ -39,6 +51,8 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
 .main-container {
   position: relative;
   overflow: hidden;
+  width: 100vw;
+  height: 100vh;
 
   &::before {
     --size: 0;
@@ -54,6 +68,12 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
   }
   &:hover::before {
     --size: 90rem;
+  }
+
+  .switch {
+    position: absolute;
+    top: 0.4rem;
+    right: 2rem;
   }
 }
 </style>
