@@ -56,7 +56,7 @@ import Wobble from '../Wobble/index.vue'
 import Navigation from '../Navigation/index.vue'
 import { ref, onMounted, onUnmounted, provide } from 'vue'
 
-const isDarkMode = ref(true)
+const isDarkMode = ref(false)
 provide('isDarkMode', isDarkMode)
 const x = ref(0)
 const y = ref(0)

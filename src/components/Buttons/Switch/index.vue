@@ -27,7 +27,7 @@ const emit = defineEmits<{
 // #endregion
 
 // #region Methods
-const icon = ref('sun')
+const icon = ref('moon-stroke')
 const toggle = () => {
   emit('toggle', !props.value)
   icon.value = props.value ? 'moon-stroke' : 'sun'
