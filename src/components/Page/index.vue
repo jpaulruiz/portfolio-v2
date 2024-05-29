@@ -13,7 +13,6 @@
     <Wobble color="#B8D81E" />
     <Wobble color="#1ED89B" />
     <Wobble color="#3E1ED8" />
-    <Home />
     <div 
       class="switch"
     >
@@ -35,16 +34,23 @@
         </div>
         <Navigation 
           class="navigation"
-          :options="navOptions" 
+          :options="navOptions"
+          @home="handleNav"
+          @experience="handleNav"
+          @contact="handleNav"
         />
       </section>
-      <section />
+      <section>
+        <Home />
+        <Experience />
+      </section>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
 import Home from '../Home/index.vue'
+import Experience from '../Experience/index.vue'
 import Switch from '../Buttons/Switch/index.vue'
 import Wobble from '../Wobble/index.vue'
 import Navigation from '../Navigation/index.vue'
@@ -88,6 +94,10 @@ setInterval(() => {
     index = (index + 1) % words.length
   }, 500)
 }, 2000)
+
+const handleNav = (navigate: string) => {
+  console.log(navigate)
+}
 </script>
 
 
@@ -172,6 +182,13 @@ setInterval(() => {
     font-style: italic;
     font-size: 4rem;
     position: absolute;
+  }
+
+  section:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    overflow: scroll;
   }
 }
 

@@ -4,6 +4,7 @@
       <li
         v-for="(option, i) in options"
         :key="i"
+        @click="$emit(option.toLocaleLowerCase(), option.toLocaleLowerCase())"
       >
         {{ option }}
       </li>
@@ -20,6 +21,10 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   options: undefined
 })
+
+defineEmits<{
+  [index: string]: [string]
+}>()
 </script>
 
 <style scoped>
