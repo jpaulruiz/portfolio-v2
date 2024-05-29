@@ -2,25 +2,29 @@
   <div
     :class="['main-container', { 'dark-mode': isDarkMode }]"
     :style="{
-        '--x': `${x}px`,
-        '--y': `${y}px`,
-        '--cursor-background': isDarkMode ? 
+      '--x': `${x}px`,
+      '--y': `${y}px`,
+      '--cursor-background': isDarkMode ? 
         `radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%)`:
         `radial-gradient(circle closest-side, #d49aad, transparent 80%)`
-    }">
-    <Wobble color="#D81E5B"/>
-    <Wobble color="#B8D81E"/>
-    <Wobble color="#1ED89B"/>
-    <Wobble color="#3E1ED8"/>
+    }"
+  >
+    <Wobble color="#D81E5B" />
+    <Wobble color="#B8D81E" />
+    <Wobble color="#1ED89B" />
+    <Wobble color="#3E1ED8" />
     <Home />
     <div 
-      class="switch">
+      class="switch"
+    >
       <Switch 
         :value="isDarkMode"
-        @toggle="toggle"/>
+        @toggle="toggle"
+      />
     </div>
     <div
-      class="content">
+      class="content"
+    >
       <section>
         <div class="introduction">
           <p>JP RUIZ</p>
@@ -34,7 +38,7 @@
           :options="navOptions" 
         />
       </section>
-      <section></section>
+      <section />
     </div>
   </div>
 </template>

@@ -1,11 +1,11 @@
 <template>
   <div
     :style="{
-    '--bg-color': `${color}`,
-    '--mx-type': isDarkMode ? 'luminosity' : 'screen',
-    transform: `translate(${coordinates.x}vw, ${coordinates.y}vh) rotate(${degrees}deg)`
-  }">
-  </div>
+      '--bg-color': `${color}`,
+      '--mx-type': isDarkMode ? 'luminosity' : 'screen',
+      transform: `translate(${coordinates.x}vw, ${coordinates.y}vh) rotate(${degrees}deg)`
+    }"
+  />
 </template>
 
 <script lang="ts" setup>

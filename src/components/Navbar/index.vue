@@ -1,7 +1,10 @@
 <template>
   <nav>
     <span>
-      <a href="#home"><img src="/src/assets/logo.png" alt="Logo Image"></a>
+      <a href="#home"><img
+        src="/src/assets/logo.png"
+        alt="Logo Image"
+      ></a>
     </span>
     <ul>
       <li><a href="#home">HOME</a></li>
@@ -10,7 +13,8 @@
     </ul>
     <Switch 
       :value="model"
-      @toggle="toggle"/>
+      @toggle="toggle"
+    />
   </nav>
 </template>
 

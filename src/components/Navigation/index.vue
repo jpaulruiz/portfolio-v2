@@ -1,7 +1,12 @@
 <template>
   <nav>
     <ul>
-      <li v-for="option in options">{{ option }}</li>
+      <li
+        v-for="(option, i) in options"
+        :key="i"
+      >
+        {{ option }}
+      </li>
     </ul>
   </nav>
 </template>

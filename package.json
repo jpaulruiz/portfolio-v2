@@ -7,22 +7,28 @@
     "dev": "vite",
     "build": "vite-ssg build",
     "preview": "vite preview",
-    "typecheck": "vue-tsc"
+    "typecheck": "vue-tsc",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix"
   },
   "devDependencies": {
+    "@eslint/js": "^9.3.0",
     "@fontsource-variable/montserrat": "^5.0.19",
     "@fontsource/ibm-plex-mono": "^5.0.13",
     "@unhead/vue": "^1.9.10",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^9.3.0",
     "eslint-plugin-vue": "^9.26.0",
+    "globals": "^15.3.0",
     "lightningcss": "^1.24.1",
     "normalize.css": "^8.0.1",
     "prettier": "^3.2.5",
     "typescript": "^5.2.2",
+    "typescript-eslint": "^7.11.0",
     "vite": "^5.2.0",
     "vite-ssg": "^0.23.7",
     "vue": "^3.4.21",
+    "vue-eslint-parser": "^9.4.2",
     "vue-tsc": "^2.0.6"
   }
 }

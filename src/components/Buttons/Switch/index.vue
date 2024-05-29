@@ -1,7 +1,8 @@
 <template>
   <div
     class="switch-body"
-    @click="toggle">
+    @click="toggle"
+  >
     <span :class="['switch', { 'switched': value }]">
       <Icon :icon="icon" />
     </span>

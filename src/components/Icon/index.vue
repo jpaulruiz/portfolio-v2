@@ -1,6 +1,5 @@
 <template>
-  <span :class="[`icon-${icon}`]">
-  </span>
+  <span :class="[`icon-${icon}`]" />
 </template>
 <script lang="ts" setup>
 // #region Props

@@ -8,8 +8,13 @@
       <hr>
     </div>
     <div class="image">
-      <div><img src="/src/assets/ruiz.avif" alt="Me Image"></div>
-      <div></div>
+      <div>
+        <img
+          src="/src/assets/ruiz.avif"
+          alt="Me Image"
+        >
+      </div>
+      <div />
     </div>
   </div>
 </template>
