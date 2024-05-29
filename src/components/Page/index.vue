@@ -178,9 +178,8 @@ const handleNav = (navigate: string) => {
   }
 
   .navigation {
-    transform: translate(10rem, 10rem);
-    font-style: italic;
-    font-size: 4rem;
+    transform: translate(5rem, 8rem);
+    font-size: 1rem;
     position: absolute;
   }
 
@@ -188,7 +187,9 @@ const handleNav = (navigate: string) => {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    overflow: scroll;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-family: 'Montserrat Variable', Georgia, 'Times New Roman', Times, serif;
   }
 }
 

@@ -3,47 +3,80 @@
     id="experience" 
     class="experience-container"
   >
-    <p>
-      Hi! My name is John Paul Ruiz, but my friends call me <span>Royce</span>. 
-      I have been coding since my university days. Since then, it has been part of my life, and I am having fun with it.
-      Move along, I have had the opportunity to work with one of the biggest point-of-sale system providers in my country. I have developed several features and designed system flows.
-      <br><br>
-      Currently, my focus is on web development (Full-Stack Dev).
-      Since then, I have been developing new interfaces to building APIs catering the needs of customers and clients.
-      <br><br>
-      BTW, I go to the gym during my leisure time or play DOTA 2.
-    </p>
-    <p>
-      Hi! My name is John Paul Ruiz, but my friends call me <span>Royce</span>. 
-      I have been coding since my university days. Since then, it has been part of my life, and I am having fun with it.
-      Move along, I have had the opportunity to work with one of the biggest point-of-sale system providers in my country. I have developed several features and designed system flows.
-      <br><br>
-      Currently, my focus is on web development (Full-Stack Dev).
-      Since then, I have been developing new interfaces to building APIs catering the needs of customers and clients.
-      <br><br>
-      BTW, I go to the gym during my leisure time or play DOTA 2.
-    </p>
+    <div 
+      v-for="(exp, i) in Experiences"
+      :key="i"
+    >
+      <h4>{{ exp.title }} &#8226; {{ exp.company }}</h4>
+      <h5>{{ exp.duration[0] }} &mdash; {{ exp.duration[1] }}</h5>
+      <div class="details">
+        <p 
+          v-for="(desc, j) in exp.details"
+          :key="j"
+        >
+          {{ desc }}
+        </p>
+      </div>
+      <ul>
+        <li 
+          v-for="(lang, k) in exp.language"
+          :key="k"
+        >
+          {{ lang }}
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+import Experiences from '../../experience.json'
 </script>
 
 <style scoped>
 .experience-container {
+  margin-top: 4rem;
   padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
   font-size: 1rem;
-  p {
-    text-align: justify;
-    line-height: 1.5rem;
+  gap: 1rem;
 
-    span {
-      -webkit-text-stroke: 1px;
-      background-clip: text;
-      color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-image: linear-gradient(to right, #D81E5B, #D81E5B 10%, #68107a 90%, #68107a);
+  & > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 6px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+  }
+
+  .details p {
+    margin-bottom: 0.5rem;
+    font-size: 13px;
+    text-indent: 1rem;
+  }
+
+  ul {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 13px;
+
+    li {
+      color: #D81E5B;
+      background: rgba(216, 30, 91, 0.2);
+      border-radius: 1rem;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      border: 1px solid rgba(216, 30, 91, 0.3);
+      padding: 0.5rem;
     }
   }
 }

@@ -9,7 +9,7 @@
       Move along, I have had the opportunity to work with one of the biggest point-of-sale system providers in my country. I have developed several features and designed system flows.
       <br><br>
       Currently, my focus is on web development (Full-Stack Dev).
-      Since then, I have been developing new interfaces to building APIs catering the needs of customers and clients.
+      I have been developing new interfaces to building APIs catering the needs of customers and clients.
       <br><br>
       BTW, I go to the gym during my leisure time or play DOTA 2.
     </p>
@@ -21,9 +21,10 @@
 
 <style scoped>
 .home-container {
-  padding: 0 2rem;
-  font-size: 1rem;
+  padding: 1rem 2rem 0 2rem;
+
   p {
+    font-size: 0.9rem;
     text-align: left;
     line-height: 1.5rem;
 

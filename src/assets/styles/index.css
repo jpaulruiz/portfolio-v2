@@ -1,5 +1,6 @@
 :root {
   --nav-bg: #fcf3f6;
+  --nav-circle: #1A1A1F; 
 
   --text-primary: #18181A;
   --text-logo-primary: #D81E5B;
@@ -16,6 +17,7 @@
 
 .dark-mode {
   --nav-bg: #1A1A1F;
+  --nav-circle: #D81E5B; 
 
   --text-primary: #FFFFFF;
   --text-logo-primary: #D81E5B;

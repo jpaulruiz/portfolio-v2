@@ -1,0 +1,45 @@
+[
+  {
+    "title": "Software Engineer",
+    "company": "Vauldex Technologies",
+    "duration": ["2023", "PRESENT"],
+    "language": ["VueJS", "Nuxt", "Scala", "HTML", "JavaScript", "SASS"],
+    "details": [
+      "Develop and manage the components that form the structure of ClockMe App.",
+      "Developed subscription plans to enhance revenue and implemented a seamless checkout process with integrated payment gateways for a smooth user experience",
+      "Improved code readability, maintainability, and performance. Removed code smells and redundancies for a more efficient application. Applied best practices and design patterns to enhance code quality."
+    ]
+  },
+  {
+    "title": "Lead Software Engineer",
+    "company": "Alliance Outsourcing & Software Development Inc.",
+    "duration": ["2021", "2023"],
+    "language": ["JavaScript", "ReactJS", "PHP", "HTML", "XML", "CSS"],
+    "details": [
+      "Worked on enterprise retail system. A web-based POS application using SaaS architecture.",
+      "Built and maintained components to several applications that comprises the entire POS.",
+      "Optimized application performance and increased client retention rates.",
+      "Performed code reviews and provided consultations to junior developers."
+    ]
+  },
+  {
+    "title": "Commission",
+    "company": "Westwood Publishing",
+    "duration": ["2023", "2023"],
+    "language": ["ReactJS", "GatsbyJS", "JavaScript", "CSS", "HTML"],
+    "details": [
+      "Developed dynamic services webpage for interactive interface.",
+      "Developed bookstore webpage for displaying collection and available books."
+    ]
+  },
+  {
+    "title": "Intern",
+    "company": "Advanced World Solutions Inc.",
+    "duration": ["2019", "2019"],
+    "language": ["C++", "HTML", "CSS"],
+    "details": [
+      "Worked along with Research & Development developers with the task to do unit testing on their deliverables.",
+      "Created software documentation for unit testing."
+    ]
+  }
+]
