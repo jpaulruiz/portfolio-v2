@@ -15,6 +15,7 @@
     "@eslint/js": "^9.3.0",
     "@fontsource-variable/montserrat": "^5.0.19",
     "@fontsource/ibm-plex-mono": "^5.0.13",
+    "@stylistic/eslint-plugin": "^2.1.0",
     "@unhead/vue": "^1.9.10",
     "@vitejs/plugin-vue": "^5.0.4",
     "eslint": "^9.3.0",

@@ -24,7 +24,7 @@ import Switch from '../Buttons/Switch/index.vue'
 const model = defineModel<boolean>({ default: false })
 
 const toggle = (e: boolean) => {
-    model.value = e
+  model.value = e
 }
 </script>
 

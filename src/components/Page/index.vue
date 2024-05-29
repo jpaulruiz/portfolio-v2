@@ -61,7 +61,7 @@ const update = (event: MouseEvent) => {
 }
 
 const toggle = (e: boolean) => {
-    isDarkMode.value = e
+  isDarkMode.value = e
 }
 
 onMounted(() => window.addEventListener('mousemove', update))

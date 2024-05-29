@@ -1,12 +1,13 @@
-import globals from "globals"
-import pluginJs from "@eslint/js"
-import tseslint from "typescript-eslint"
-import pluginVue from "eslint-plugin-vue"
-import * as vueEslintParser from "vue-eslint-parser"
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import tseslint from 'typescript-eslint'
+import pluginVue from 'eslint-plugin-vue'
+import * as vueEslintParser from 'vue-eslint-parser'
+import stylistic from '@stylistic/eslint-plugin'
 
 export default [
   pluginJs.configs.recommended,
-  ...pluginVue.configs["flat/recommended"],
+  ...pluginVue.configs['flat/recommended'],
   { 
     languageOptions: { 
       globals: {
@@ -17,8 +18,12 @@ export default [
         parser: tseslint.parser
       }
     },
+    plugins: {
+      '@stylistic': stylistic
+    },
     rules: {
-      'vue/multi-word-component-names': 0
+      'vue/multi-word-component-names': 0,
+      '@stylistic/indent': ['error', 2]
     }
   }
 ];
