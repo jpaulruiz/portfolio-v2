@@ -54,6 +54,7 @@ import Experiences from '../../experience.json'
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
+      transition: all 0.2s ease-in-out;
     }
   }
 
@@ -67,6 +68,7 @@ import Experiences from '../../experience.json'
     display: flex;
     gap: 0.5rem;
     font-size: 13px;
+    flex-wrap: wrap;
 
     li {
       color: #D81E5B;
