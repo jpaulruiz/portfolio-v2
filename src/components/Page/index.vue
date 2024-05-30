@@ -189,7 +189,13 @@ const handleNav = (navigate: string) => {
     gap: 2rem;
     overflow-y: auto;
     overflow-x: hidden;
-    font-family: 'Montserrat Variable', Georgia, 'Times New Roman', Times, serif;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    
+    &::-webkit-scrollbar { /* WebKit */
+        width: 0;
+        height: 0;
+    }
   }
 }
 
