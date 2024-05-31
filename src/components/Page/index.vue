@@ -28,17 +28,19 @@
           <p>Software Engineer</p>
           <p>Translates <span>{{ word }}</span> <br>into reality.</p>
         </div>
-        <Navigation 
+        <Navigation
           class="navigation"
           :options="navOptions"
-          @home="handleNav"
-          @experience="handleNav"
-          @contact="handleNav"
+          :opt="navigation"
+          @home="handleScroll"
+          @experience="handleScroll"
+          @contact="handleScroll"
         />
       </section>
       <section
         ref="content"
         class="content"
+        @scroll="handleScroll"
       >
         <Home ref="home" />
         <Experience ref="experience" />
@@ -54,14 +56,16 @@ import Switch from '../Buttons/Switch/index.vue'
 import Wobble from '../Wobble/index.vue'
 import Navigation from '../Navigation/index.vue'
 import common from '../../common.json'
-import { ref, onMounted, onUnmounted, provide } from 'vue'
+import { ref, onMounted, onUnmounted, provide, watchEffect } from 'vue'
 
 const content = ref<HTMLElement | null>(null)
-const home = ref<HTMLElement | null>(null)
-const experience = ref<HTMLElement | null>(null)
+const home = ref<InstanceType<typeof Home> | null>(null)
+const experience = ref<InstanceType<typeof Experience> | null>(null)
 const isDarkMode = ref(false)
 const x = ref(0)
 const y = ref(0)
+const navigation = ref('HOME')
+const scroll = ref(0)
 
 provide('isDarkMode', isDarkMode)
 
@@ -87,17 +91,45 @@ setInterval(() => {
   }, 500)
 }, 2000)
 
-const handleNav = (navigate: string) => {
-  handleScroll(navigate)
+const handleScroll = (scrollTo: string | Event) => {
+  if (!content.value || !home.value || !experience.value) return
+  if (typeof scrollTo === 'string') {
+    switch (scrollTo) {
+      case 'home':
+        content.value.scrollTop = 0
+        break
+      case 'experience':
+        content.value.scrollTop = home.value.$el.scrollHeight + (4 * 16) + (2 * 16)
+        break
+      case 'contact':
+        break
+      default:
+        break
+    }
+  } else {
+    scroll.value = content.value.scrollTop
+  }
 }
 
-const handleScroll = (scrollTo: string) => {
-  // const scroll = content.value
-  console.log(scrollTo)
+const handleNav = (scrollTo: number) => {
+  if (!content.value || !home.value || !experience.value) return
+  if (scrollTo <= (home.value.$el.scrollHeight - home.value.$el.scrollHeight/4)) {
+    navigation.value = 'HOME'
+  } else if (scrollTo >= home.value.$el.scrollHeight &&
+    scrollTo <= home.value.$el.scrollHeight + (4 * 16) + (2 * 16) + content.value.scrollHeight) {
+    navigation.value = 'EXPERIENCE'
+  }
 }
+
+watchEffect(() => {
+  if (scroll.value) {
+    handleNav(scroll.value)
+  }
+})
 
 onMounted(() => {
   window.addEventListener('mousemove', update)
+  handleScroll('home')
 })
 onUnmounted(() => window.removeEventListener('mousemove', update))
 </script>

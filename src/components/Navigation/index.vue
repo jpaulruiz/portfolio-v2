@@ -14,26 +14,34 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 
 interface Props {
   options: string[] | undefined
+  opt: string
 }
 
-withDefaults(defineProps<Props>(), {
-  options: undefined
+const props = withDefaults(defineProps<Props>(), {
+  options: undefined,
+  opt: 'HOME'
 })
 
 const emit = defineEmits<{
   [index: string]: [string]
 }>()
 
-const activeOpt = ref('HOME')
+const activeOpt = ref(props.opt)
 
 const handleNav = (option: string) => {
   activeOpt.value = option
   emit(option.toLocaleLowerCase(), option.toLocaleLowerCase())
 }
+
+watchEffect(() => {
+  if (props.opt) {
+    activeOpt.value = props.opt
+  }
+})
 </script>
 
 <style scoped>
