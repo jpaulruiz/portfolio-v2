@@ -31,10 +31,6 @@
   --cursor-background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 * {
   font-family: 'IBM Plex Mono', 'Montserrat Variable', Georgia, 'Times New Roman', Times, serif;
   margin: 0;

@@ -222,6 +222,7 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    scroll-behavior: smooth;
     overflow-y: auto;
     overflow-x: hidden;
     scrollbar-width: none; /* Firefox */
