@@ -64,8 +64,8 @@ onMounted(() => {
 <style scoped>
 div {
   position: absolute;
-  width: 3.5em;
-  height: 3.5em;
+  width: 35vmax;
+  height: 35vmax;
   background: var(--bg-color);
   mix-blend-mode: var(--mx-type);
   font-size: 17vmin;

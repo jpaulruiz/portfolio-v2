@@ -49,7 +49,7 @@ import Experiences from '../../experience.json'
     padding: 2rem;
 
     &:hover {
-      background-color: rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.1);
       border-radius: 6px;
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(5px);
@@ -79,6 +79,16 @@ import Experiences from '../../experience.json'
       -webkit-backdrop-filter: blur(5px);
       border: 1px solid rgba(216, 30, 91, 0.3);
       padding: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .experience-container {
+    padding: 0;
+
+    & > div {
+      padding: 1rem;
     }
   }
 }

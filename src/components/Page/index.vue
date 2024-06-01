@@ -240,4 +240,18 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
     background-position: 200%;
   }
 }
+
+@media screen and (max-width: 834px) {
+  .main {
+    grid-template-columns: 1fr;
+
+    .navigation {
+      display: none;
+    }
+
+    & > section {
+      margin-bottom: 4rem;
+    }
+  }
+}
 </style>
