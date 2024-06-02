@@ -2,7 +2,7 @@
   <div
     :style="{
       '--bg-color': `${color}`,
-      '--mx-type': isDarkMode ? 'luminosity' : 'screen',
+      '--mx-type': isDarkMode ? 'color-dodge' : 'screen',
       transform: `translate(${coordinates.x}vw, ${coordinates.y}vh) rotate(${degrees}deg)`
     }"
   />
