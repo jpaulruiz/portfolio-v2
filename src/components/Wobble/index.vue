@@ -63,11 +63,11 @@ onMounted(() => {
 
 <style scoped>
 div {
-  position: absolute;
+  position: fixed;
   width: 35vmax;
   height: 35vmax;
   background: var(--bg-color);
-  mix-blend-mode: var(--mx-type);
+  mix-blend-mode: var(--mx-type) !important;
   font-size: 17vmin;
   border-radius: 50%;
   box-shadow: inset 0 0 .5em .2em #000, 0 0 .15em 0 #fff;

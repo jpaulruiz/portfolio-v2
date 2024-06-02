@@ -115,7 +115,7 @@
     padding: 2rem;
 
     .content {
-      text-align: justify;
+      gap: 4rem;
     }
 
     .navigation {
@@ -123,7 +123,7 @@
     }
 
     section:nth-child(1) {
-      margin-bottom: 4rem;
+      margin-bottom: 8rem;
     }
   }
 }

@@ -86,9 +86,15 @@ import Experiences from '../../experience.json'
 @media screen and (max-width: 834px) {
   .experience-container {
     padding: 0;
+    gap: 2rem;
 
     & > div {
       padding: 1rem;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
     }
   }
 }
