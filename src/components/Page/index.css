@@ -1,0 +1,139 @@
+.container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  background-color: var(--background-primary);
+
+  &::before {
+    --size: 0;
+    content: '';
+    position: absolute;
+    left: var(--x);
+    top: var(--y);
+    width: var(--size);
+    height: var(--size);
+    background-image: var(--cursor-background);
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease;
+  }
+  &:hover::before {
+    --size: 90rem;
+  }
+
+  .switch {
+    position: absolute;
+    top: 0.4rem;
+    right: 2rem;
+  }
+}
+
+.main {
+  margin: 2rem;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  section {
+    font-size: 2rem;
+    position: relative;
+    color: var(--text-primary);
+    font-weight: bold;
+  }
+
+  .introduction {
+    & > p {
+      font-size: 4rem;
+      text-wrap: nowrap;
+      background-clip: text;
+      color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-animation: textclip 2s linear infinite;
+      animation: textclip 2s linear infinite;
+      background-image: linear-gradient(to left, #6a1b74, #68107a 10%, #ff1361 67%, #f700ff);
+      background-size: 200% auto;
+    }
+  }
+
+  .description {
+    p {
+      margin-top: 1rem;
+    }
+
+    & > p {
+      font-size: 1rem;
+    }
+
+    p + p {
+      font-size: 1rem;
+    }
+  }
+
+  .navigation {
+    transform: translate(5rem, 8rem);
+    font-size: 1rem;
+    position: absolute;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    
+    &::-webkit-scrollbar { /* WebKit */
+        width: 0;
+        height: 0;
+    }
+  }
+}
+
+@keyframes textclip {
+  100% { 
+    background-position: 200%;
+  }
+}
+
+@media screen and (max-width: 834px) {
+  .container {
+    .switch {
+      z-index: 1;
+    }
+  }
+
+  .main {
+    grid-template-columns: 1fr;
+    border: none;
+    margin: 0;
+    padding: 2rem;
+
+    .content {
+      text-align: justify;
+    }
+
+    .navigation {
+      display: none;
+    }
+
+    section:nth-child(1) {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .container {
+    height: 100vh;
+    
+    .main {
+      height: calc(100vh - 4rem);
+    }
+  }
+}

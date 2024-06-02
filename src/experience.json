@@ -3,7 +3,7 @@
     "title": "Software Engineer",
     "company": "Vauldex Technologies",
     "duration": ["2023", "PRESENT"],
-    "language": ["VueJS", "Nuxt", "Scala", "HTML", "JavaScript", "SASS"],
+    "language": ["VueJS", "Nuxt", "HTML", "JavaScript", "SASS", "Scala", "Akka", "Slick", "PostgreSQL"],
     "details": [
       "Develop and manage the components that form the structure of ClockMe App.",
       "Developed subscription plans to enhance revenue and implemented a seamless checkout process with integrated payment gateways for a smooth user experience",
@@ -14,7 +14,7 @@
     "title": "Lead Software Engineer",
     "company": "Alliance Outsourcing & Software Development Inc.",
     "duration": ["2021", "2023"],
-    "language": ["JavaScript", "ReactJS", "PHP", "HTML", "XML", "CSS"],
+    "language": ["JavaScript", "ReactJS", "PHP", "HTML", "XML", "CSS", "MySQL"],
     "details": [
       "Worked on enterprise retail system. A web-based POS application using SaaS architecture.",
       "Built and maintained components to several applications that comprises the entire POS.",

@@ -42,6 +42,10 @@
 @media screen and (max-width: 834px) {
   .home-container {
     padding: 0;
+
+    p {
+      text-align: justify;
+    }
   }
 }
 </style>
