@@ -140,7 +140,6 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
   position: relative;
   overflow: hidden;
   width: 100vw;
-  height: 100vh;
   background-color: var(--background-primary);
 
   &::before {
@@ -169,7 +168,6 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
 .main {
   margin: 2rem;
   padding: 2rem;
-  height: calc(100vh - 4rem);
   border: 1px solid var(--border-color);
   box-sizing: border-box;
   position: relative;
@@ -244,13 +242,25 @@ onUnmounted(() => window.removeEventListener('mousemove', update))
 @media screen and (max-width: 834px) {
   .main {
     grid-template-columns: 1fr;
+    border: none;
+    padding: 0;
 
     .navigation {
       display: none;
     }
 
-    & > section {
+    section:nth-child(1) {
       margin-bottom: 4rem;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .container {
+    height: 100vh;
+    
+    .main {
+      height: calc(100vh - 4rem);
     }
   }
 }
