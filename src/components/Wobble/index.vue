@@ -2,14 +2,13 @@
   <div
     :style="{
       '--bg-color': `${color}`,
-      '--mx-type': isDarkMode ? 'color-dodge' : 'screen',
       transform: `translate(${coordinates.x}vw, ${coordinates.y}vh) rotate(${degrees}deg)`
     }"
   />
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted, inject } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 // #region Props
 interface Props {
   color: string
@@ -29,7 +28,6 @@ interface Coordinates {
 const coordinates = reactive<Coordinates>({x: 0, y: 0})
 const translate = reactive<Coordinates>({x: 0, y: 0})
 const degrees = ref(0)
-const isDarkMode = inject('isDarkMode')
 // #endregion
 
 // #region Methods
@@ -67,7 +65,7 @@ div {
   width: 35vmax;
   height: 35vmax;
   background: var(--bg-color);
-  mix-blend-mode: var(--mx-type) !important;
+  mix-blend-mode: screen;
   font-size: 17vmin;
   border-radius: 50%;
   box-shadow: inset 0 0 .5em .2em #000, 0 0 .15em 0 #fff;

@@ -9,10 +9,10 @@
         `radial-gradient(circle closest-side, #d49aad, transparent 80%)`
     }"
   >
-    <Wobble color="#D81E5B" />
-    <Wobble color="#B8D81E" />
-    <Wobble color="#1ED89B" />
-    <Wobble color="#3E1ED8" />
+    <Wobble :color="isDarkMode ? `silver` : `#D81E5B`" />
+    <Wobble :color="isDarkMode ? `darkgrey` : `#B8D81E`" />
+    <Wobble :color="isDarkMode ? `#3d3737` : `#1ED89B`" />
+    <Wobble :color="isDarkMode ? `#1a1717` : `#3E1ED8`" />
     <div class="switch">
       <Switch 
         :value="isDarkMode"
@@ -56,7 +56,7 @@ import Switch from '../Buttons/Switch/index.vue'
 import Wobble from '../Wobble/index.vue'
 import Navigation from '../Navigation/index.vue'
 import common from '../../common.json'
-import { ref, onMounted, onUnmounted, provide, watchEffect } from 'vue'
+import { ref, onMounted, onUnmounted, watchEffect } from 'vue'
 
 const content = ref<HTMLElement | null>(null)
 const home = ref<InstanceType<typeof Home> | null>(null)
@@ -66,8 +66,6 @@ const x = ref(0)
 const y = ref(0)
 const navigation = ref('HOME')
 const scroll = ref(0)
-
-provide('isDarkMode', isDarkMode)
 
 const update = (event: MouseEvent) => {
   x.value = event.pageX
