@@ -3,6 +3,7 @@
     id="home" 
     class="home-container"
   >
+    <h1>ABOUT</h1>
     <p>
       Hi! My name is John Paul Ruiz, but my friends call me <span>Royce</span>. 
       I have been coding since my university days. Since then, it has been part of my life, and I am having fun with it.
@@ -42,6 +43,19 @@
 @media screen and (max-width: 834px) {
   .home-container {
     padding: 0;
+
+    h1 {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .home-container {
+    h1 {
+      display: none;
+    }
   }
 }
 </style>

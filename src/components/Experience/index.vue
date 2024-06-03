@@ -3,6 +3,7 @@
     id="experience" 
     class="experience-container"
   >
+    <h1>EXPERIENCE</h1>
     <div 
       v-for="(exp, i) in Experiences"
       :key="i"
@@ -95,6 +96,18 @@ import Experiences from '../../experience.json'
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+@media screen and (min-width: 835px) {
+  .experience-container {
+    h1 {
+      display: none;
     }
   }
 }
