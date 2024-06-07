@@ -43,6 +43,10 @@ import Experiences from '../../experience.json'
   font-size: 1rem;
   gap: 1rem;
 
+  h5 {
+    font-weight: normal;
+  }
+
   & > div {
     display: flex;
     flex-direction: column;
@@ -63,6 +67,7 @@ import Experiences from '../../experience.json'
     margin-bottom: 0.5rem;
     font-size: 13px;
     text-indent: 1rem;
+    font-weight: normal;
   }
 
   ul {

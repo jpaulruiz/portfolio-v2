@@ -28,6 +28,7 @@
     font-size: 0.9rem;
     text-align: left;
     line-height: 1.5rem;
+    font-weight: normal;
 
     span {
       -webkit-text-stroke: 1px;

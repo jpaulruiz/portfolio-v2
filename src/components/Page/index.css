@@ -61,6 +61,11 @@
   .description {
     p {
       margin-top: 1rem;
+      font-family: 'IBM Plex Mono', 'Montserrat Variable', Georgia, 'Times New Roman', Times, serif;
+
+      span {
+        font-family: inherit;
+      }
     }
 
     & > p {
