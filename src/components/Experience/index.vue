@@ -103,6 +103,7 @@ import Experiences from '../../experience.json'
       backdrop-filter: blur(2px);
       transform: translateX(-2rem);
       padding: 1rem 0 1rem 2rem;
+      z-index: 1;
     }
 
     & > div {
