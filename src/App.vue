@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import Page from './components/Page/index.vue'
+import Page from '../src/Page/index.vue'
 import { useSeoMeta } from '@unhead/vue'
 
 useSeoMeta({

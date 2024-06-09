@@ -48,6 +48,12 @@
     h1 {
       font-size: 1.2rem;
       margin-bottom: 2rem;
+      position: sticky;
+      top: 0;
+      width: calc(100% + 2rem);
+      backdrop-filter: blur(2px);
+      transform: translateX(-2rem);
+      padding: 1rem 0 1rem 2rem;
     }
   }
 }

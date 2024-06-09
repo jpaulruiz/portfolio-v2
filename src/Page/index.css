@@ -1,7 +1,5 @@
 .container {
   position: relative;
-  overflow: hidden;
-  width: 100vw;
   background-color: var(--background-primary);
 
   &::before {
@@ -16,6 +14,7 @@
     transform: translate(-50%, -50%);
     transition: width 0.2s ease, height 0.2s ease;
   }
+
   &:hover::before {
     --size: 90rem;
   }
@@ -88,8 +87,6 @@
     flex-direction: column;
     gap: 2rem;
     scroll-behavior: smooth;
-    overflow-y: auto;
-    overflow-x: hidden;
     scrollbar-width: none; /* Firefox */
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     
@@ -110,6 +107,17 @@
   .container {
     .switch {
       z-index: 1;
+    }
+
+    &::before {
+      pointer-events: none;
+      left: 0;
+      top: 0;
+      --size: 90vmax;
+    }
+
+    &:hover::before {
+      --size: 90vmax;
     }
   }
 
@@ -136,9 +144,15 @@
 @media screen and (min-width: 835px) {
   .container {
     height: 100vh;
+    overflow: hidden;
     
     .main {
       height: calc(100vh - 4rem);
+    }
+
+    .content {
+      overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 }

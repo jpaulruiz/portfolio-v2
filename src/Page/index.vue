@@ -36,6 +36,9 @@
           @experience="handleScroll"
           @contact="handleScroll"
         />
+        <MediaLinks
+          :options="mediaLinks"
+        />
       </section>
       <section
         ref="content"
@@ -50,18 +53,19 @@
 </template>
 
 <script lang="ts" setup>
-import Home from '../Home/index.vue'
-import Experience from '../Experience/index.vue'
-import Switch from '../Buttons/Switch/index.vue'
-import Wobble from '../Wobble/index.vue'
-import Navigation from '../Navigation/index.vue'
-import common from '../../common.json'
+import Home from '../components/Home/index.vue'
+import Experience from '../components/Experience/index.vue'
+import Switch from '../components/Buttons/Switch/index.vue'
+import Wobble from '../components/Wobble/index.vue'
+import Navigation from '../components/Navigation/index.vue'
+import common from '../common.json'
+import MediaLinks from '../components/MediaLinks/index.vue'
 import { ref, onMounted, onUnmounted, watchEffect } from 'vue'
 
 const content = ref<HTMLElement | null>(null)
 const home = ref<InstanceType<typeof Home> | null>(null)
 const experience = ref<InstanceType<typeof Experience> | null>(null)
-const isDarkMode = ref(true)
+const isDarkMode = ref(false)
 const x = ref(0)
 const y = ref(0)
 const navigation = ref('HOME')
@@ -78,6 +82,7 @@ const toggle = (e: boolean) => {
 
 const words = common.word_randomizer
 const navOptions = common.navigation
+const mediaLinks = common.media_links
 
 const word = ref(words[0])
 let index = 0

@@ -45,5 +45,11 @@ withDefaults(defineProps<Props>(), {
 .icon-sun:before {
   content: "\e9d4";
 }
+.icon-github:before {
+  content: "\eab0";
+}
+.icon-linkedin:before {
+  content: "\eac9";
+}
 
 </style>
