@@ -3,7 +3,7 @@
     "title": "Software Engineer",
     "company": "Vauldex Technologies",
     "duration": ["2023", "PRESENT"],
-    "language": ["VueJS", "Nuxt", "HTML", "JavaScript", "SASS", "Scala", "Akka", "Slick", "PostgreSQL"],
+    "language": ["VueJS", "Nuxt", "HTML", "JavaScript", "TypeScript", "CSS", "SASS", "Scala", "Akka", "Slick", "PostgreSQL"],
     "details": [
       "Develop and manage the components that form the structure of ClockMe App.",
       "Developed subscription plans to enhance revenue and implemented a seamless checkout process with integrated payment gateways for a smooth user experience",

@@ -8,9 +8,9 @@
   --switch-bg: #D81E5B;
   --switch-gradient-bg: linear-gradient(90deg, #D81E5B 2.77%, #d077d3 42.12%, #D81E5B) padding-box;
   --switch-circle: #FFFFFF;
+  --switch-border: #6a1b74;
 
   --border-color: #D81E5B;
-  --border-hover-color: #1A1A1F;
 
   --background-primary: #d6c8cc;
   --cursor-background: radial-gradient(circle closest-side, #d49aad, transparent 80%);
@@ -28,9 +28,9 @@
 
   --switch-bg: #505055;
   --switch-circle: #1A1A1F;
+  --switch-border: #D81E5B;
 
   --border-color: #c7c6c6;
-  --border-hover-color: #D81E5B;
 
   --background-primary: #18181A;
   --cursor-background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);

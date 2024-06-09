@@ -46,11 +46,7 @@ const toggle = () => {
   border-radius: 50px;
   position: relative;
   cursor: pointer;
-  border: 1px solid transparent;
-
-  &:hover {
-    border-color: var(--border-hover-color);
-  }
+  border: 1px solid var(--switch-border);
 }
 
 .switch {
