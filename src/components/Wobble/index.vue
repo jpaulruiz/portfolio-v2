@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted } from 'vue'
+import { ref, reactive, onMounted, nextTick } from 'vue'
 // #region Props
 interface Props {
   color: string
@@ -55,9 +55,9 @@ onMounted(() => {
 
 <style scoped>
 div {
-  position: fixed;
-  width: 25vmax;
-  height: 25vmax;
+  position: absolute;
+  width: 20vmax;
+  height: 20vmax;
   background: var(--bg-color);
   mix-blend-mode: screen;
   font-size: 17vmin;

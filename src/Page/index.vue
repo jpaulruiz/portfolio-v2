@@ -9,45 +9,48 @@
         `radial-gradient(circle closest-side, #d49aad, transparent 80%)`
     }"
   >
-    <Wobble :color="isDarkMode ? `silver` : `#D81E5B`" />
-    <Wobble :color="isDarkMode ? `darkgrey` : `#B8D81E`" />
-    <Wobble :color="isDarkMode ? `#3d3737` : `#1ED89B`" />
-    <Wobble :color="isDarkMode ? `#1a1717` : `#3E1ED8`" />
     <div class="switch">
       <Switch 
         :value="isDarkMode"
         @toggle="toggle"
       />
     </div>
-    <div class="main">
-      <section>
-        <div class="introduction">
-          <p>JP RUIZ</p>
-        </div>
-        <div class="description">
-          <p>Software Engineer</p>
-          <p>Translates <span>{{ word }}</span> <br>into reality.</p>
-        </div>
-        <Navigation
-          class="navigation"
-          :options="navOptions"
-          :opt="navigation"
-          @home="handleScroll"
-          @experience="handleScroll"
-          @contact="handleScroll"
-        />
-        <MediaLinks
-          :options="mediaLinks"
-        />
-      </section>
-      <section
-        ref="content"
-        class="content"
-        @scroll="handleScroll"
-      >
-        <Home ref="home" />
-        <Experience ref="experience" />
-      </section>
+    <div class="main-wrapper">
+      <Wobble
+        v-for="(colorPair, i) in colorPairs" 
+        :key="i" 
+        :color="isDarkMode ? colorPair.dark : colorPair.light"
+      />
+      <div class="main">
+        <section>
+          <div class="introduction">
+            <p>JP RUIZ</p>
+          </div>
+          <div class="description">
+            <p>Software Engineer</p>
+            <p>Translates <span>{{ word }}</span> <br>into reality.</p>
+          </div>
+          <Navigation
+            class="navigation"
+            :options="navOptions"
+            :opt="navigation"
+            @home="handleScroll"
+            @experience="handleScroll"
+            @contact="handleScroll"
+          />
+          <MediaLinks
+            :options="mediaLinks"
+          />
+        </section>
+        <section
+          ref="content"
+          class="content"
+          @scroll="handleScroll"
+        >
+          <Home ref="home" />
+          <Experience ref="experience" />
+        </section>
+      </div>
     </div>
   </div>
 </template>
@@ -70,6 +73,13 @@ const x = ref(0)
 const y = ref(0)
 const navigation = ref('HOME')
 const scroll = ref(0)
+
+const colorPairs = [
+  { dark: 'silver', light: '#D81E5B' },
+  { dark: 'darkgrey', light: '#B8D81E' },
+  { dark: '#3d3737', light: '#1ED89B' },
+  { dark: '#1a1717', light: '#3E1ED8' }
+]
 
 const update = (event: MouseEvent) => {
   x.value = event.pageX
