@@ -9,7 +9,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, reactive, onMounted, nextTick } from 'vue'
+import { ref, reactive, onMounted } from 'vue'
 // #region Props
 interface Props {
   color: string
@@ -33,8 +33,8 @@ const toggleTransition = ref(false)
 
 // #region Methods
 const valueGenerator = () => {
-  coordinates.x = -10 + (Math.random() * 100)
-  coordinates.y = -40 + (Math.random() * 130)
+  coordinates.x = 5 + (Math.random() * 65)
+  coordinates.y = 10 + (Math.random() * 30)
   degrees.value = Math.random() * 420
 }
 // #endregion
@@ -56,8 +56,8 @@ onMounted(() => {
 <style scoped>
 div {
   position: absolute;
-  width: 20vmax;
-  height: 20vmax;
+  width: 15vmax;
+  height: 15vmax;
   background: var(--bg-color);
   mix-blend-mode: screen;
   font-size: 17vmin;

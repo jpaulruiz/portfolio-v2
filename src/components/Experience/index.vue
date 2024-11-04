@@ -52,15 +52,12 @@ import Experiences from '../../experience.json'
     flex-direction: column;
     gap: 0.5rem;
     padding: 2rem;
-
-    &:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      border-radius: 6px;
-      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
-      transition: all 0.2s ease-in-out;
-    }
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    transition: all 0.2s ease-in-out;
   }
 
   .details p {
@@ -104,6 +101,7 @@ import Experiences from '../../experience.json'
       transform: translateX(-2rem);
       padding: 1rem 0 1rem 2rem;
       z-index: 1;
+      color: #D81E5B;
     }
 
     & > div {

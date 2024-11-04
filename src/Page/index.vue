@@ -68,7 +68,7 @@ import { ref, onMounted, onUnmounted, watchEffect } from 'vue'
 const content = ref<HTMLElement | null>(null)
 const home = ref<InstanceType<typeof Home> | null>(null)
 const experience = ref<InstanceType<typeof Experience> | null>(null)
-const isDarkMode = ref(false)
+const isDarkMode = ref(true)
 const x = ref(0)
 const y = ref(0)
 const navigation = ref('HOME')

@@ -5,14 +5,14 @@
   >
     <h1>ABOUT</h1>
     <p>
-      Hi! My name is John Paul Ruiz, but my friends call me <span>Royce</span>. 
-      I have been coding since my university days. Since then, it has been part of my life, and I am having fun with it.
-      Move along, I have had the opportunity to work with one of the biggest point-of-sale system providers in my country. I have developed several features and designed system flows.
-      <br><br>
-      Currently, my focus is on web development (Full-Stack Dev).
-      I have been developing new interfaces to building APIs catering the needs of customers and clients.
-      <br><br>
-      BTW, I go to the gym during my leisure time or play DOTA 2.
+      Hello there! I am <span>Royce</span>.
+      A Full-Stack Engineer with 4 years work experience.
+      <br>
+      <br>
+      I have worked with several Japanese companies, gaining valuable experience in cross-cultural collaboration and enhancing my skills in diverse business environments.
+      <br>
+      <br>
+      My main focus right now is working with various AI-related projects, building on my experience.
     </p>
   </div>
 </template>
@@ -31,12 +31,9 @@
     font-weight: normal;
 
     span {
-      -webkit-text-stroke: 1px;
-      background-clip: text;
-      color: transparent;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-image: linear-gradient(to right, #D81E5B, #D81E5B 10%, #68107a 90%, #68107a);
+      color: #D81E5B;
+      font-size: 1.2rem;
+      font-weight: bold;
     }
   }
 }
@@ -54,6 +51,7 @@
       backdrop-filter: blur(2px);
       transform: translateX(-2rem);
       padding: 1rem 0 1rem 2rem;
+      color: #D81E5B;
     }
   }
 }
