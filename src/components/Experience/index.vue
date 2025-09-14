@@ -159,47 +159,42 @@ const openWebsite = (url?: string) => {
 
 @media screen and (max-width: 834px) {
   .experience-container {
-    padding: 0;
-    gap: 2rem;
-
-    h1 {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      position: sticky;
-      top: 0;
-      width: calc(100% + 2rem);
-      backdrop-filter: blur(2px);
-      transform: translateX(-2rem);
-      padding: 1rem 0 1rem 2rem;
-      z-index: 1;
-      color: #D81E5B;
-    }
+    padding: 0 1rem;
+    gap: 0.75rem;
+    font-size: 0.9rem;
 
     .experience-card {
-      padding: 1rem;
-      background: transparent;
-      border: 1px solid transparent;
-      border-radius: 12px;
-      box-shadow: none;
-      backdrop-filter: none;
-      -webkit-backdrop-filter: none;
+      padding: 1.5rem;
     }
 
-    .experience-card:hover {
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      box-shadow: var(--card-shadow);
-      backdrop-filter: var(--glass-blur);
-      -webkit-backdrop-filter: var(--glass-blur);
+    .card-header h4 {
+      font-size: 0.95rem;
     }
 
-    h1 {
-      font-size: 1.2rem;
+    .card-header h5 {
+      font-size: 0.85rem;
+    }
+
+    .details p {
+      font-size: 0.75rem;
+    }
+
+    ul li {
+      font-size: 0.7rem;
+      padding: 0.4rem;
     }
   }
 }
 
 @media screen and (min-width: 835px) {
+  .experience-container {
+    h1 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
   .experience-container {
     h1 {
       display: none;

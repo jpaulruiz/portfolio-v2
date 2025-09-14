@@ -77,8 +77,12 @@ a:active, a:hover {
 
 @media screen and (max-width: 834px) {
   nav {
-    transform: translate(0);
-    margin-top: 1rem;
+    position: absolute;
+    bottom: 1.5rem;
+    left: 3rem;
+    transform: none;
+    font-size: 1.2rem;
+    margin-top: 0;
   }
 }
 </style>

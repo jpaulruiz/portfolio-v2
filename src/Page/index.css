@@ -86,35 +86,62 @@
 
 @media screen and (max-width: 834px) {
   .container {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+
     .switch {
       z-index: 1;
     }
-
   }
 
   .main-wrapper {
+    margin: 1rem;
+    overflow: hidden;
+    position: relative;
+    border: 1px solid transparent;
+    border-radius: 0 2rem 0 2rem;
     background-color: var(--background-primary);
   }
 
-  .main {
-    grid-template-columns: 1fr;
-    border: none;
-    margin: 0;
-    padding: 2rem;
+  .main.main-wrapper {
+    padding: 1rem;
+    font-size: 0.9rem;
+    height: calc(100vh - 2rem);
+    display: grid;
+    grid-template-columns: 0.6fr 1.4fr;
 
-    .content {
-      gap: 4rem;
+    .introduction > p {
+      font-size: 2.5rem;
+      white-space: normal;
+      text-wrap: balance;
+      max-width: 100%;
+    }
+
+    .description {
+      & > p {
+        font-size: 0.8rem;
+      }
+
+      p + p {
+        font-size: 0.8rem;
+      }
     }
 
     .navigation {
-      display: none;
+      transform: translate(1rem, 4rem);
+      font-size: 0.8rem;
     }
 
-    section:nth-child(1) {
-      margin-bottom: 8rem;
+    .content {
+      gap: 1.5rem;
+      overflow: hidden;
+      height: 100%;
+      padding-left: 0;
     }
   }
 }
+
 
 @media screen and (min-width: 835px) {
   .main-wrapper {
@@ -129,17 +156,28 @@
   .container {
     height: 100vh;
     overflow: hidden;
-    
+
     .main {
       height: calc(100vh - 4rem);
     }
 
     .content {
       overflow: hidden;
-      
+
       &.no-scroll {
         overflow: hidden;
       }
     }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+  }
+
+  .container .main.main-wrapper {
+    display: grid;
+    grid-template-columns: 30% 70%;
   }
 }

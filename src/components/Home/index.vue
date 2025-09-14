@@ -107,30 +107,43 @@ const animateNameHighlight = () => {
 
 @media screen and (max-width: 834px) {
   .home-container {
-    padding: 0;
-
-    h1 {
-      font-size: 1.2rem;
-      margin-bottom: 2rem;
-      position: sticky;
-      top: 0;
-      width: calc(100% + 2rem);
-      backdrop-filter: blur(2px);
-      transform: translateX(-2rem);
-      padding: 1rem 0 1rem 2rem;
-      color: #D81E5B;
-    }
+    padding: 0.75rem 1.5rem 0 1.5rem;
   }
 
-  .intro-text,
+  .content-wrapper {
+    gap: 1.5rem;
+  }
+
+  .intro-text {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+
+  .name-highlight {
+    font-size: 1rem;
+  }
+
   .experience-text,
-  .current-focus-text,
+  .current-focus-text {
+    font-size: 0.8rem;
+    line-height: 1.3rem;
+  }
+
   .skills-text {
-    text-align: left;
+    font-size: 0.65rem;
+    line-height: 1.1rem;
   }
 }
 
 @media screen and (min-width: 835px) {
+  .home-container {
+    h1 {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 834px) {
   .home-container {
     h1 {
       display: none;
