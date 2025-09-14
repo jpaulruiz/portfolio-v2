@@ -1,7 +1,7 @@
 [
   {
     "title": "Senior Software Engineer",
-    "company": "Childcare Marketing Ltd.",
+    "company": "Childcare Marketing Ltd. (UK)",
     "duration": ["2025", "PRESENT"],
     "language": ["ReactJS", "NextJS", "TypeScript", "Supabase", "Tailwind", "PostgreSQL", "RPC", "Docker", "CI/CD", "Google APIs"],
     "details": [
@@ -13,7 +13,7 @@
   },
   {
     "title": "Senior Software Engineer",
-    "company": "Mango",
+    "company": "Mango (US)",
     "duration": ["2025", "PRESENT"],
     "language": ["ReactJS", "NextJS", "TypeScript", "Tailwind", "AI Integration", "SaaS", "PostgreSQL", "Prisma", "Docker", "CI/CD"],
     "details": [
@@ -25,7 +25,7 @@
   },
   {
     "title": "Software Engineer",
-    "company": "Vauldex Technologies",
+    "company": "Vauldex Technologies (Japan)",
     "duration": ["2023", "2025"],
     "language": ["VueJS", "Nuxt", "HTML", "Tailwind", "TypeScript", "CSS", "SASS", "Scala", "Akka", "Slick", "PostgreSQL"],
     "details": [
@@ -37,7 +37,7 @@
   },
   {
     "title": "Lead Software Engineer",
-    "company": "Alliance Outsourcing & Software Development Inc.",
+    "company": "Alliance Outsourcing & Software Development Inc. (Japan)",
     "duration": ["2021", "2023"],
     "language": ["JavaScript", "ReactJS", "PHP", "HTML", "XML", "CSS", "MySQL"],
     "details": [
@@ -50,7 +50,7 @@
   },
   {
     "title": "Commission",
-    "company": "Westwood Publishing",
+    "company": "Westwood Publishing (US)",
     "duration": ["2023", "2023"],
     "language": ["ReactJS", "GatsbyJS", "JavaScript", "CSS", "HTML"],
     "details": [
@@ -60,7 +60,7 @@
   },
   {
     "title": "Intern",
-    "company": "Advanced World Solutions Inc.",
+    "company": "Advanced World Solutions Inc. (Japan)",
     "duration": ["2019", "2019"],
     "language": ["C++", "HTML", "CSS"],
     "details": [
