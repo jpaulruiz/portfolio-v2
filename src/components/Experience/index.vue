@@ -41,14 +41,6 @@
           {{ desc }}
         </p>
       </div>
-      <ul>
-        <li 
-          v-for="(lang, k) in exp.language"
-          :key="k"
-        >
-          {{ lang }}
-        </li>
-      </ul>
     </div>
   </div>
 </template>
@@ -83,12 +75,12 @@ const openWebsite = (url?: string) => {
     flex-direction: column;
     gap: 0.5rem;
     padding: 2rem;
-    background: var(--card-bg);
-    border: 1px solid var(--card-border);
+    background: transparent;
+    border: 1px solid transparent;
     border-radius: 12px;
-    box-shadow: var(--card-shadow);
-    backdrop-filter: var(--glass-blur);
-    -webkit-backdrop-filter: var(--glass-blur);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     transition: all 0.3s ease-in-out;
     animation: slideInFromRight 0.6s ease-out forwards;
     opacity: 0;
@@ -101,9 +93,11 @@ const openWebsite = (url?: string) => {
 
   .experience-card:hover {
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    background: var(--card-hover-bg);
-    border-color: var(--border-color);
+    box-shadow: var(--card-shadow);
+    background: var(--card-bg);
+    border: 1px solid white;
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
   }
 
   .card-header {
@@ -183,9 +177,17 @@ const openWebsite = (url?: string) => {
 
     .experience-card {
       padding: 1rem;
+      background: transparent;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .experience-card:hover {
       background: var(--card-bg);
       border: 1px solid var(--card-border);
-      border-radius: 12px;
       box-shadow: var(--card-shadow);
       backdrop-filter: var(--glass-blur);
       -webkit-backdrop-filter: var(--glass-blur);
