@@ -1,94 +1,68 @@
 <template>
   <div
     :class="['container', { 'dark-mode': isDarkMode }]"
-    :style="{
-      '--x': `${x}px`,
-      '--y': `${y}px`,
-      '--cursor-background': isDarkMode ? 
-        `radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%)`:
-        `radial-gradient(circle closest-side, #d49aad, transparent 80%)`
-    }"
   >
-    <div class="switch">
-      <Switch 
-        :value="isDarkMode"
-        @toggle="toggle"
-      />
+    <FlowingRibbons ref="flowingRibbons" />
+    <div
+      class="main main-wrapper"
+      @mousemove="forwardMouseEvent"
+      @mousedown="forwardMouseEvent"
+      @mouseup="forwardMouseEvent"
+    >
+      <section>
+        <div class="introduction">
+          <p>JP RUIZ</p>
+        </div>
+        <div class="description">
+          <p>Software Engineer</p>
+          <p>Translates <span>{{ word }}</span> <br>into reality.</p>
+        </div>
+        <Navigation
+          class="navigation"
+          :options="navOptions"
+          :opt="navigation"
+          @home="handleScroll"
+          @experience="handleScroll"
+          @contact="handleScroll"
+        />
+      </section>
+      <section
+        ref="content"
+        class="content no-scroll"
+      >
+        <Home
+          v-show="navigation === 'HOME'"
+          ref="home"
+        />
+        <Experience
+          v-show="navigation === 'EXPERIENCE'"
+          ref="experience"
+        />
+      </section>
     </div>
-    <div class="main-wrapper">
-      <Wobble
-        v-for="(colorPair, i) in colorPairs" 
-        :key="i" 
-        :color="isDarkMode ? colorPair.dark : colorPair.light"
-      />
-      <div class="main">
-        <section>
-          <div class="introduction">
-            <p>JP RUIZ</p>
-          </div>
-          <div class="description">
-            <p>Software Engineer</p>
-            <p>Translates <span>{{ word }}</span> <br>into reality.</p>
-          </div>
-          <Navigation
-            class="navigation"
-            :options="navOptions"
-            :opt="navigation"
-            @home="handleScroll"
-            @experience="handleScroll"
-            @contact="handleScroll"
-          />
-          <MediaLinks
-            :options="mediaLinks"
-          />
-        </section>
-        <section
-          ref="content"
-          class="content"
-          @scroll="handleScroll"
-        >
-          <Home ref="home" />
-          <Experience ref="experience" />
-        </section>
-      </div>
-    </div>
+    <MediaLinks
+      :options="mediaLinks"
+    />
   </div>
 </template>
 
 <script lang="ts" setup>
 import Home from '../components/Home/index.vue'
 import Experience from '../components/Experience/index.vue'
-import Switch from '../components/Buttons/Switch/index.vue'
-import Wobble from '../components/Wobble/index.vue'
 import Navigation from '../components/Navigation/index.vue'
 import common from '../common.json'
 import MediaLinks from '../components/MediaLinks/index.vue'
-import { ref, onMounted, onUnmounted, watchEffect } from 'vue'
+import FlowingRibbons from '../components/FlowingRibbons/index.vue'
+import { ref, onMounted } from 'vue'
+import { gsap } from 'gsap'
 
 const content = ref<HTMLElement | null>(null)
 const home = ref<InstanceType<typeof Home> | null>(null)
 const experience = ref<InstanceType<typeof Experience> | null>(null)
+const flowingRibbons = ref<InstanceType<typeof FlowingRibbons> | null>(null)
 const isDarkMode = ref(true)
-const x = ref(0)
-const y = ref(0)
 const navigation = ref('HOME')
-const scroll = ref(0)
 
-const colorPairs = [
-  { dark: 'silver', light: '#D81E5B' },
-  { dark: 'darkgrey', light: '#B8D81E' },
-  { dark: '#3d3737', light: '#1ED89B' },
-  { dark: '#1a1717', light: '#3E1ED8' }
-]
-
-const update = (event: MouseEvent) => {
-  x.value = event.pageX
-  y.value = event.pageY
-}
-
-const toggle = (e: boolean) => {
-  isDarkMode.value = e
-}
 
 const words = common.word_randomizer
 const navOptions = common.navigation
@@ -104,47 +78,98 @@ setInterval(() => {
   }, 500)
 }, 2000)
 
+const forwardMouseEvent = (event: MouseEvent) => {
+  const canvas = flowingRibbons.value?.$refs?.canvasRef as HTMLCanvasElement | undefined
+  if (!canvas) return
+  
+  const canvasEvent = new MouseEvent(event.type, {
+    bubbles: event.bubbles,
+    cancelable: event.cancelable,
+    clientX: event.clientX,
+    clientY: event.clientY,
+    button: event.button,
+    buttons: event.buttons
+  })
+  
+  canvas.dispatchEvent(canvasEvent)
+}
+
 const handleScroll = (scrollTo: string | Event) => {
-  if (!content.value || !home.value || !experience.value) return
   if (typeof scrollTo === 'string') {
-    switch (scrollTo) {
-      case 'home':
-        content.value.scrollTop = 0
-        break
-      case 'experience':
-        content.value.scrollTop = home.value.$el.scrollHeight + (4 * 16) + (2 * 16)
-        break
-      case 'contact':
-        break
-      default:
-        break
-    }
+    animateToSection(scrollTo)
+  }
+}
+
+const animateToSection = (section: string) => {
+  const currentSection = content.value?.querySelector(`[v-show="${navigation.value === 'HOME'}"]`) || 
+                        content.value?.querySelector(`[v-show="${navigation.value === 'EXPERIENCE'}"]`)
+  
+  if (currentSection) {
+    gsap.to(currentSection, {
+      duration: 0.5,
+      opacity: 0,
+      ease: "power2.out",
+      onComplete: () => {
+        navigation.value = section.toUpperCase()
+        const newSection = section === 'home' ? home.value?.$el : experience.value?.$el
+        if (newSection) {
+          if (section === 'experience') {
+            gsap.fromTo(newSection, 
+              { opacity: 0, x: 100 },
+              { duration: 0.6, opacity: 1, x: 0, ease: "power2.out" }
+            )
+          } else {
+            gsap.fromTo(newSection, 
+              { opacity: 0, y: 50 },
+              { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
+            )
+          }
+        }
+      }
+    })
   } else {
-    scroll.value = content.value.scrollTop
+    navigation.value = section.toUpperCase()
+    const newSection = section === 'home' ? home.value?.$el : experience.value?.$el
+    if (newSection) {
+      if (section === 'experience') {
+        gsap.fromTo(newSection, 
+          { opacity: 0, x: 100 },
+          { duration: 0.6, opacity: 1, x: 0, ease: "power2.out" }
+        )
+      } else {
+        gsap.fromTo(newSection, 
+          { opacity: 0, y: 50 },
+          { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
+        )
+      }
+    }
   }
 }
-
-const handleNav = (scrollTo: number) => {
-  if (!content.value || !home.value || !experience.value) return
-  if (scrollTo <= (home.value.$el.scrollHeight - home.value.$el.scrollHeight/4)) {
-    navigation.value = 'HOME'
-  } else if (scrollTo >= home.value.$el.scrollHeight &&
-    scrollTo <= home.value.$el.scrollHeight + (4 * 16) + (2 * 16) + content.value.scrollHeight) {
-    navigation.value = 'EXPERIENCE'
-  }
-}
-
-watchEffect(() => {
-  if (scroll.value) {
-    handleNav(scroll.value)
-  }
-})
 
 onMounted(() => {
-  window.addEventListener('mousemove', update)
-  handleScroll('home')
+  navigation.value = 'HOME'
+  if (home.value?.$el) {
+    gsap.fromTo(home.value.$el, 
+      { opacity: 0, y: 50 },
+      { duration: 1, opacity: 1, y: 0, ease: "power2.out", delay: 0.5 }
+    )
+  }
+  
+  gsap.fromTo('.introduction p', 
+    { opacity: 0, y: -30 },
+    { duration: 1, opacity: 1, y: 0, ease: "power2.out", delay: 0.2 }
+  )
+  
+  gsap.fromTo('.description p', 
+    { opacity: 0, y: 20 },
+    { duration: 1, opacity: 1, y: 0, ease: "power2.out", stagger: 0.2, delay: 0.4 }
+  )
+  
+  gsap.fromTo('.navigation', 
+    { opacity: 0, x: -30 },
+    { duration: 1, opacity: 1, x: 0, ease: "power2.out", delay: 0.6 }
+  )
 })
-onUnmounted(() => window.removeEventListener('mousemove', update))
 </script>
 
 

@@ -4,6 +4,7 @@
       <li
         v-for="(option, i) in options"
         :key="i"
+        class="media-link"
       >
         <a
           target="_blank"
@@ -19,6 +20,8 @@
 
 <script lang="ts" setup>
 import Icon from '../Icon/index.vue'
+import { gsap } from 'gsap'
+import { onMounted } from 'vue'
 
 interface MediaLink {
   name: string
@@ -32,21 +35,39 @@ interface Props {
 withDefaults(defineProps<Props>(), {
   options: undefined
 })
+
+onMounted(() => {
+  gsap.fromTo('.media-link', 
+    { opacity: 0, x: -50 },
+    { 
+      duration: 0.8, 
+      opacity: 1, 
+      x: 0, 
+      ease: "power2.out", 
+      stagger: 0.2, 
+      delay: 0.8 
+    }
+  )
+})
 </script>
 
 <style scoped>
 nav {
-  transform: translate(2rem, 18rem);
-  font-size: 2rem;
-  position: absolute;
+  transform: translate(4rem, -1.75rem);
+  font-size: 1.5rem;
 
   ul {
     display: flex;
     gap: 0.5rem;
   }
 
+  .media-link {
+    transition: transform 0.2s ease;
+  }
+
   a {
-    color: var(--media-link-primary);
+    color: #18181A;
+    display: block;
   }
 }
 

@@ -2,22 +2,6 @@
   position: relative;
   background-color: var(--border-color);
 
-  &::before {
-    --size: 0;
-    content: '';
-    position: absolute;
-    left: var(--x);
-    top: var(--y);
-    width: var(--size);
-    height: var(--size);
-    background-image: var(--cursor-background);
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease;
-  }
-
-  &:hover::before {
-    --size: 90rem;
-  }
 
   .switch {
     position: absolute;
@@ -32,6 +16,7 @@
   position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  z-index: 1;
 
   section {
     font-size: 2rem;
@@ -84,13 +69,11 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    scroll-behavior: smooth;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    position: relative;
+    height: 100%;
     
-    &::-webkit-scrollbar { /* WebKit */
-        width: 0;
-        height: 0;
+    &.no-scroll {
+      overflow: hidden;
     }
   }
 }
@@ -107,16 +90,6 @@
       z-index: 1;
     }
 
-    &::before {
-      pointer-events: none;
-      left: 0;
-      top: 0;
-      --size: 90vmax;
-    }
-
-    &:hover::before {
-      --size: 90vmax;
-    }
   }
 
   .main-wrapper {
@@ -162,8 +135,11 @@
     }
 
     .content {
-      overflow-y: auto;
-      overflow-x: hidden;
+      overflow: hidden;
+      
+      &.no-scroll {
+        overflow: hidden;
+      }
     }
   }
 }

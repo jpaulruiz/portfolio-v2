@@ -1,14 +1,39 @@
 [
   {
+    "title": "Senior Software Engineer",
+    "company": "Childcare Marketing Ltd.",
+    "duration": ["2025", "PRESENT"],
+    "language": ["ReactJS", "NextJS", "TypeScript", "Supabase", "Tailwind", "PostgreSQL", "RPC", "Docker", "CI/CD", "Google APIs"],
+    "details": [
+      "Developed a custom CRM system to manage childcare marketing clients, streamlining communication and automating key workflows, resulting in increased operational efficiency.",
+      "Integrated third-party APIs and marketing tools to create a cohesive digital marketing ecosystem.",
+      "Built responsive web interfaces enhancing user experience across desktop and mobile platforms."
+    ],
+    "website": "https://childcaremarketing.co.uk/"
+  },
+  {
+    "title": "Senior Software Engineer",
+    "company": "Mango",
+    "duration": ["2025", "PRESENT"],
+    "language": ["ReactJS", "NextJS", "TypeScript", "Tailwind", "AI Integration", "SaaS", "PostgreSQL", "Prisma", "Docker", "CI/CD"],
+    "details": [
+      "Built SaaS software for recruitment and hiring solutions with advanced candidate management features.",
+      "Integrated AI for scraping and analyzing candidates' CVs, automating the candidate evaluation process.",
+      "Developed online interview platform with real-time video conferencing and assessment tools."
+    ],
+    "website": "https://mango.nyc/"
+  },
+  {
     "title": "Software Engineer",
     "company": "Vauldex Technologies",
-    "duration": ["2023", "PRESENT"],
-    "language": ["VueJS", "Nuxt", "HTML", "JavaScript", "TypeScript", "CSS", "SASS", "Scala", "Akka", "Slick", "PostgreSQL"],
+    "duration": ["2023", "2025"],
+    "language": ["VueJS", "Nuxt", "HTML", "Tailwind", "TypeScript", "CSS", "SASS", "Scala", "Akka", "Slick", "PostgreSQL"],
     "details": [
       "Develop and manage the components that form the structure of ClockMe App.",
       "Developed subscription plans to enhance revenue and implemented a seamless checkout process with integrated payment gateways for a smooth user experience",
       "Improved code readability, maintainability, and performance. Removed code smells and redundancies for a more efficient application. Applied best practices and design patterns to enhance code quality."
-    ]
+    ],
+    "website": "https://vauldex.tech"
   },
   {
     "title": "Lead Software Engineer",
@@ -20,7 +45,8 @@
       "Built and maintained components to several applications that comprises the entire POS.",
       "Optimized application performance and increased client retention rates.",
       "Performed code reviews and provided consultations to junior developers."
-    ]
+    ],
+    "website": "https://alliance.com.ph/"
   },
   {
     "title": "Commission",
@@ -40,6 +66,7 @@
     "details": [
       "Worked along with Research & Development developers with the task to do unit testing on their deliverables.",
       "Created software documentation for unit testing."
-    ]
+    ],
+    "website": "https://www.awsys-i.com/jp/home.php"
   }
 ]

@@ -12,7 +12,7 @@ useSeoMeta({
     width: 'device-width',
     initialScale: 1
   },
-  title: 'JP RUIZ',
+  title: 'John Paul Ruiz',
   description: 'jpmruiz-portfolio-v2'
 })
 </script>

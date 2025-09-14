@@ -1,5 +1,5 @@
 :root {
-  --nav-bg: #fcf3f6;
+  --nav-bg: rgba(252, 243, 246, 0.85);
   --nav-circle: #1A1A1F; 
 
   --text-primary: #18181A;
@@ -12,15 +12,21 @@
 
   --border-color: #D81E5B;
 
-  --background-primary: #d6c8cc;
+  --background-primary: #f5f0f2;
   --cursor-background: radial-gradient(circle closest-side, #d49aad, transparent 80%);
 
   --media-link-primary: #ce5980;
   --media-link-secondary: #D81E5B;
+  
+  --card-bg: rgba(255, 255, 255, 0.25);
+  --card-border: rgba(216, 30, 91, 0.2);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-blur: blur(10px);
+  --card-hover-bg: rgba(255, 255, 255, 0.4);
 }
 
 .dark-mode {
-  --nav-bg: #1A1A1F;
+  --nav-bg: rgba(26, 26, 31, 0.85);
   --nav-circle: #D81E5B; 
 
   --text-primary: #FFFFFF;
@@ -30,13 +36,19 @@
   --switch-circle: #1A1A1F;
   --switch-border: #D81E5B;
 
-  --border-color: #c7c6c6;
+  --border-color: #f5f0f2;
 
-  --background-primary: #18181A;
-  --cursor-background: radial-gradient(circle closest-side, rgb(43, 41, 41), transparent 80%);
+  --background-primary: rgba(20, 20, 20, 0.85);
+  --cursor-background: radial-gradient(circle closest-side, rgba(216, 30, 91, 0.2), transparent 80%);
 
-  --media-link-primary: #505055;
-  --media-link-secondary: #adadb1;
+  --media-link-primary: #6b6b70;
+  --media-link-secondary: #D81E5B;
+  
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(216, 30, 91, 0.3);
+  --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  --glass-blur: blur(15px);
+  --card-hover-bg: rgba(255, 255, 255, 0.1);
 }
 
 * {
