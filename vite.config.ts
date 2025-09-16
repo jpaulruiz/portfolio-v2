@@ -13,6 +13,6 @@ export default defineConfig({
     vue()
   ],
   ssgOptions: {
-    formatting: 'minify'
+    formatting: 'prettify'
   }
 })
