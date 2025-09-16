@@ -125,5 +125,5 @@ onMounted(() => {
 })
 </script>
 
-<style src="../Page/index.css" scoped>
+<style src="./index.css" scoped>
 </style>

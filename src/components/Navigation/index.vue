@@ -55,7 +55,7 @@ li {
   position: relative;
   transition: transform 0.2s ease-in-out;
   font-family: 'Montserrat Variable';
-  cursor: pointer;
+  font-size: 0.725rem;
 
   &::before {
     content: '';
