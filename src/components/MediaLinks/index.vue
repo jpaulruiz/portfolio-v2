@@ -83,6 +83,7 @@ a:active, a:hover {
     transform: none;
     font-size: 1.2rem;
     margin-top: 0;
+    z-index: 1;
   }
 }
 </style>

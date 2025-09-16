@@ -11,6 +11,9 @@ importers:
       gsap:
         specifier: ^3.13.0
         version: 3.13.0
+      vue-router:
+        specifier: '4'
+        version: 4.3.2(vue@3.5.21(typescript@5.9.2))
     devDependencies:
       '@eslint/js':
         specifier: ^9.35.0
@@ -2023,8 +2026,7 @@ snapshots:
       de-indent: 1.0.2
       he: 1.2.0
 
-  '@vue/devtools-api@6.6.4':
-    optional: true
+  '@vue/devtools-api@6.6.4': {}
 
   '@vue/language-core@2.2.12(typescript@5.9.2)':
     dependencies:
@@ -2961,7 +2963,6 @@ snapshots:
     dependencies:
       '@vue/devtools-api': 6.6.4
       vue: 3.5.21(typescript@5.9.2)
-    optional: true
 
   vue-tsc@2.2.12(typescript@5.9.2):
     dependencies:

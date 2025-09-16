@@ -1,9 +1,8 @@
 <template>
-  <Page />
+  <router-view />
 </template>
 
 <script setup lang="ts">
-import Page from '../src/Page/index.vue'
 import { useSeoMeta, useHead } from '@unhead/vue'
 
 useHead({

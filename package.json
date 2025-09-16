@@ -33,6 +33,7 @@
     "vue-tsc": "^2.2.12"
   },
   "dependencies": {
-    "gsap": "^3.13.0"
+    "gsap": "^3.13.0",
+    "vue-router": "4"
   }
 }
