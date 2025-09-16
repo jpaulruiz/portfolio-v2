@@ -23,6 +23,7 @@
           :opt="navigation"
           @home="handleScroll"
           @experience="handleScroll"
+          @projects="handleScroll"
           @contact="handleScroll"
         />
       </section>
@@ -38,6 +39,10 @@
           v-show="navigation === 'EXPERIENCE'"
           ref="experience"
         />
+        <Projects
+          v-show="navigation === 'PROJECTS'"
+          ref="projects"
+        />
       </section>
     </div>
     <MediaLinks
@@ -49,6 +54,7 @@
 <script lang="ts" setup>
 import Home from '../components/Home/index.vue'
 import Experience from '../components/Experience/index.vue'
+import Projects from '../components/Projects/index.vue'
 import Navigation from '../components/Navigation/index.vue'
 import common from '../common.json'
 import MediaLinks from '../components/MediaLinks/index.vue'
@@ -59,6 +65,7 @@ import { gsap } from 'gsap'
 const content = ref<HTMLElement | null>(null)
 const home = ref<InstanceType<typeof Home> | null>(null)
 const experience = ref<InstanceType<typeof Experience> | null>(null)
+const projects = ref<InstanceType<typeof Projects> | null>(null)
 const flowingRibbons = ref<InstanceType<typeof FlowingRibbons> | null>(null)
 const isDarkMode = ref(true)
 const navigation = ref('HOME')
@@ -101,9 +108,10 @@ const handleScroll = (scrollTo: string | Event) => {
 }
 
 const animateToSection = (section: string) => {
-  const currentSection = content.value?.querySelector(`[v-show="${navigation.value === 'HOME'}"]`) || 
-                        content.value?.querySelector(`[v-show="${navigation.value === 'EXPERIENCE'}"]`)
-  
+  const currentSection = content.value?.querySelector(`[v-show="${navigation.value === 'HOME'}"]`) ||
+                        content.value?.querySelector(`[v-show="${navigation.value === 'EXPERIENCE'}"]`) ||
+                        content.value?.querySelector(`[v-show="${navigation.value === 'PROJECTS'}"]`)
+
   if (currentSection) {
     gsap.to(currentSection, {
       duration: 0.5,
@@ -111,37 +119,27 @@ const animateToSection = (section: string) => {
       ease: "power2.out",
       onComplete: () => {
         navigation.value = section.toUpperCase()
-        const newSection = section === 'home' ? home.value?.$el : experience.value?.$el
+        const newSection = section === 'home' ? home.value?.$el :
+          section === 'experience' ? experience.value?.$el :
+            section === 'projects' ? projects.value?.$el : null
         if (newSection) {
-          if (section === 'experience') {
-            gsap.fromTo(newSection, 
-              { opacity: 0, x: 100 },
-              { duration: 0.6, opacity: 1, x: 0, ease: "power2.out" }
-            )
-          } else {
-            gsap.fromTo(newSection, 
-              { opacity: 0, y: 50 },
-              { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
-            )
-          }
+          gsap.fromTo(newSection,
+            { opacity: 0, x: 100 },
+            { duration: 0.6, opacity: 1, x: 0, ease: "power2.out" }
+          )
         }
       }
     })
   } else {
     navigation.value = section.toUpperCase()
-    const newSection = section === 'home' ? home.value?.$el : experience.value?.$el
+    const newSection = section === 'home' ? home.value?.$el :
+      section === 'experience' ? experience.value?.$el :
+        section === 'projects' ? projects.value?.$el : null
     if (newSection) {
-      if (section === 'experience') {
-        gsap.fromTo(newSection, 
-          { opacity: 0, x: 100 },
-          { duration: 0.6, opacity: 1, x: 0, ease: "power2.out" }
-        )
-      } else {
-        gsap.fromTo(newSection, 
-          { opacity: 0, y: 50 },
-          { duration: 0.5, opacity: 1, y: 0, ease: "power2.out" }
-        )
-      }
+      gsap.fromTo(newSection,
+        { opacity: 0, x: 100 },
+        { duration: 0.6, opacity: 1, x: 0, ease: "power2.out" }
+      )
     }
   }
 }
@@ -149,9 +147,9 @@ const animateToSection = (section: string) => {
 onMounted(() => {
   navigation.value = 'HOME'
   if (home.value?.$el) {
-    gsap.fromTo(home.value.$el, 
-      { opacity: 0, y: 50 },
-      { duration: 1, opacity: 1, y: 0, ease: "power2.out", delay: 0.5 }
+    gsap.fromTo(home.value.$el,
+      { opacity: 0, x: 100 },
+      { duration: 1, opacity: 1, x: 0, ease: "power2.out", delay: 0.5 }
     )
   }
   
