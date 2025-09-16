@@ -56,6 +56,7 @@ li {
   transition: transform 0.2s ease-in-out;
   font-family: 'Montserrat Variable';
   font-size: 0.725rem;
+  cursor: pointer;
 
   &::before {
     content: '';
