@@ -22,7 +22,7 @@
       </p>
 
       <a
-        href="/src/RUIZJOHNPAUL.pdf"
+        href="/assets/RUIZJOHNPAUL.pdf"
         target="_blank"
         class="resume-link"
       >

@@ -2,7 +2,7 @@
   <nav>
     <span>
       <a href="#home"><img
-        src="/src/assets/logo.png"
+        src="/assets/logo.png"
         alt="Logo Image"
       ></a>
     </span>

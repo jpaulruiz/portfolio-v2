@@ -10,7 +10,7 @@
     <div class="image">
       <div>
         <img
-          src="/src/assets/ruiz.avif"
+          src="/assets/ruiz.avif"
           alt="Me Image"
         >
       </div>
