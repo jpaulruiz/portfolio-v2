@@ -14,7 +14,7 @@
   {
     "title": "Senior Software Engineer",
     "company": "Mango (US)",
-    "duration": ["2025", "PRESENT"],
+    "duration": ["2025", "2025"],
     "language": ["ReactJS", "NextJS", "TypeScript", "Tailwind", "AI Integration", "SaaS", "PostgreSQL", "Prisma", "Docker", "CI/CD"],
     "details": [
       "Built SaaS software for recruitment and hiring solutions with advanced candidate management features.",
