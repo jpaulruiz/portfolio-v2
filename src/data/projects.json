@@ -51,9 +51,9 @@
     "image": "/assets/clockme-landing-1.webp",
     "categories": "Marketing, Web Design, UI/UX",
     "features": [
+      "/assets/clockme-landing-1.webp",
       "/assets/clockme-landing-2.webp",
-      "/assets/clockme-landing-3.webp",
-      "/assets/clockme-landing-4.webp"
+      "/assets/clockme-landing-3.webp"
     ],
     "techStack": ["Vue.js", "SCSS", "Intersection Observer API", "CSS Animations", "Responsive Design"],
     "keyFeatures": ["Responsive design", "Interactive animations", "Feature showcase", "Call-to-action sections", "Performance optimized"],
