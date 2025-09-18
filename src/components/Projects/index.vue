@@ -66,9 +66,30 @@
           <div class="modal-layout">
             <div class="left-section">
               <div class="project-summary">
-                <h1 id="modal-title">
-                  {{ selectedProject.title }}
-                </h1>
+                <div class="modal-title-container">
+                  <h1 id="modal-title">
+                    {{ selectedProject.title }}
+                  </h1>
+                  <div
+                    v-if="selectedProject.link"
+                    class="modal-arrow"
+                    @click="openLink(selectedProject.link)"
+                  >
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M7 7h10v10" />
+                      <path d="m7 17 10-10" />
+                    </svg>
+                  </div>
+                </div>
                 <p class="project-description">
                   {{ selectedProject.description }}
                 </p>
@@ -100,7 +121,12 @@
                     :alt="`Feature ${index + 1}`"
                   >
                   <p class="image-description">
-                    Feature {{ index + 1 }} showcase
+                    <template v-if="selectedProject.title === 'Nagoya Catalogue App'">
+                      Feature {{ index + 1 }} showcase (Project confidentiality)
+                    </template>
+                    <template v-else>
+                      Feature {{ index + 1 }} showcase
+                    </template>
                   </p>
                 </div>
               </div>
@@ -125,74 +151,85 @@ interface Project {
   features: string[]
   techStack: string[]
   keyFeatures: string[]
+  link?: string
 }
 
 const selectedProject = ref<Project | null>(null)
 
 const projects = ref<Project[]>([
   {
-    title: "E-Commerce Platform",
-    summary: "Modern full-stack e-commerce solution with real-time inventory management",
-    description: "A comprehensive e-commerce platform built with modern web technologies, featuring real-time inventory management, secure payment processing, and an intuitive admin dashboard. The platform supports multiple payment methods and provides detailed analytics for business insights.",
-    image: "https://picsum.photos/200/150?random=1",
-    categories: "Engineering, R&D, UI/UX",
+    title: "Childcare Marketing App",
+    summary: "Multi-tenant childcare marketing platform connecting agencies and nurseries",
+    description: "A comprehensive multi-tenancy application that handles multiple nurseries and connects marketing agencies with childcare centers. Built with modern web technologies, the platform features campaign management, omni-channel optimization, task tracking, and many more. Each nursery operates within its own isolated environment while agencies can manage multiple client accounts, creating a seamless ecosystem for childcare marketing operations.",
+    image: "/src/assets/cmapp-login.webp",
+    categories: "CRM, Engineering, R&D, AI, UI/UX, Product Design",
     features: [
-      "https://picsum.photos/400/250?random=11",
-      "https://picsum.photos/400/250?random=12",
-      "https://picsum.photos/400/250?random=13",
-      "https://picsum.photos/400/250?random=14",
-      "https://picsum.photos/400/250?random=15"
+      "/src/assets/cmapp-tasks.webp",
+      "/src/assets/cmapp-channels.webp",
+      "/src/assets/cmapp-campaign-manager.webp"
     ],
-    techStack: ["Vue.js", "Node.js", "PostgreSQL", "Stripe API", "Docker"],
-    keyFeatures: ["Real-time inventory", "Payment processing", "Admin dashboard", "Analytics", "Multi-vendor support"]
+    techStack: ["React.js", "Next.js", "TypeScript", "PostgreSQL", "Drizzle", "Supabase", "Docker", "Tailwind", "Edge Functions"],
+    keyFeatures: ["Multi-tenant architecture", "Agency-nursery connections", "Campaign management", "Channel optimization", "Task tracking"],
+    link: "https://app.childcaremarketing.ai"
   },
   {
-    title: "Task Management App",
-    summary: "Collaborative project management tool with real-time updates and team collaboration",
-    description: "A powerful task management application designed for teams to collaborate efficiently. Features include real-time updates, drag-and-drop task organization, time tracking, and comprehensive reporting. Built with a focus on user experience and performance.",
-    image: "https://picsum.photos/200/150?random=2",
-    categories: "Product Design, Engineering, UX Research",
+    title: "Mango Hire",
+    summary: "AI-powered multi-tenant hiring platform with intelligent candidate matching",
+    description: "A powerful multi-tenant hiring management application that leverages AI to streamline recruitment processes across multiple organizations. The platform uses artificial intelligence for candidate screening, automated interview scheduling, and intelligent matching algorithms. Features include AI-driven candidate tracking, smart plan settings, and comprehensive dashboard analytics with machine learning insights. Built with a focus on user experience and AI-enhanced efficiency for modern recruitment teams.",
+    image: "/src/assets/mangohire-landing.webp",
+    categories: "AI Hiring App, Product Design, Engineering, UX Research, AI",
     features: [
-      "https://picsum.photos/400/250?random=21",
-      "https://picsum.photos/400/250?random=22",
-      "https://picsum.photos/400/250?random=23",
-      "https://picsum.photos/400/250?random=24",
-      "https://picsum.photos/400/250?random=25"
+      "/src/assets/mangohire-dashboard.webp",
+      "/src/assets/mangohire-interview-list.webp",
+      "/src/assets/mangohire-plan-setting.webp"
     ],
-    techStack: ["React", "TypeScript", "Firebase", "Material-UI", "WebSocket"],
-    keyFeatures: ["Drag-and-drop interface", "Real-time collaboration", "Time tracking", "File attachments", "Custom workflows"]
+    techStack: ["React.js", "Next.js", "TypeScript", "Tailwind", "PostgreSQL", "Prisma", "AI", "Video HLS"],
+    keyFeatures: ["AI candidate matching", "Multi-tenant architecture", "Smart interview scheduling", "ML-powered analytics", "Automated screening"],
+    link: "https://hire.mango.nyc"
   },
   {
-    title: "Weather Dashboard",
-    summary: "Interactive weather application with detailed forecasts and location-based services",
-    description: "An intuitive weather dashboard that provides comprehensive weather information with beautiful visualizations. Features include location-based weather, 7-day forecasts, weather maps, and personalized alerts. The app uses multiple weather APIs for accurate data.",
-    image: "https://picsum.photos/200/150?random=3",
-    categories: "Data Visualization, Engineering, UI/UX",
+    title: "Clockme App",
+    summary: "Multi-tenant time tracking platform with AI-powered productivity insights",
+    description: "An intuitive multi-tenant time tracking application that helps organizations monitor their teams' productivity across multiple workspaces. The platform features AI-powered activity tracking, intelligent task management, and automated reporting with machine learning insights. Each organization operates within its own secure environment while benefiting from advanced analytics and AI-driven productivity recommendations. The app provides comprehensive insights into work patterns and team performance optimization.",
+    image: "/src/assets/clockme-login.webp",
+    categories: "Productivity Tracking, Engineering, UI/UX, AI, R&D",
     features: [
-      "https://picsum.photos/400/250?random=31",
-      "https://picsum.photos/400/250?random=32",
-      "https://picsum.photos/400/250?random=33",
-      "https://picsum.photos/400/250?random=34",
-      "https://picsum.photos/400/250?random=35"
+      "/src/assets/clockme-activity.webp",
+      "/src/assets/clockme-task.webp",
+      "/src/assets/clockme-report.webp"
     ],
-    techStack: ["Vue.js", "Chart.js", "OpenWeather API", "Geolocation API", "PWA"],
-    keyFeatures: ["Location-based weather", "7-day forecast", "Weather maps", "Push notifications", "Offline support"]
+    techStack: ["Vue.js", "Nuxt.js", "Scala", "Java", "PostgreSQL", "Playframework", "SASS", "Akka"],
+    keyFeatures: ["Multi-tenant architecture", "AI productivity insights", "Smart activity tracking", "Automated reporting", "Team performance analytics"],
+    link: "https://clock.me/signin"
   },
   {
-    title: "Social Media Analytics",
-    summary: "Comprehensive social media analytics platform with data visualization and insights",
-    description: "A robust analytics platform that helps businesses understand their social media performance across multiple platforms. Features advanced data visualization, competitor analysis, and automated reporting with actionable insights.",
-    image: "https://picsum.photos/200/150?random=4",
-    categories: "Analytics, Data Science, Engineering",
+    title: "Clockme Landing Page",
+    summary: "Professional landing page showcasing Clockme's features and capabilities",
+    description: "A modern, responsive landing page for the Clockme time tracking application. Features multiple sections highlighting different aspects of the product, user testimonials, pricing plans, and call-to-action elements. Designed to convert visitors into users.",
+    image: "/src/assets/clockme-landing-1.webp",
+    categories: "Marketing, Web Design, UI/UX",
     features: [
-      "https://picsum.photos/400/250?random=41",
-      "https://picsum.photos/400/250?random=42",
-      "https://picsum.photos/400/250?random=43",
-      "https://picsum.photos/400/250?random=44",
-      "https://picsum.photos/400/250?random=45"
+      "/src/assets/clockme-landing-2.webp",
+      "/src/assets/clockme-landing-3.webp",
+      "/src/assets/clockme-landing-4.webp"
     ],
-    techStack: ["Angular", "D3.js", "Python", "MongoDB", "Redis"],
-    keyFeatures: ["Multi-platform analytics", "Data visualization", "Competitor analysis", "Automated reports", "Custom dashboards"]
+    techStack: ["Vue.js", "SCSS", "Intersection Observer API", "CSS Animations", "Responsive Design"],
+    keyFeatures: ["Responsive design", "Interactive animations", "Feature showcase", "Call-to-action sections", "Performance optimized"],
+    link: "https://clock.me"
+  },
+  {
+    title: "Nagoya Catalogue App",
+    summary: "Multi-tenant startup companies catalog with portfolio management",
+    description: "A multi-tenant web app that catalogs health startups, allowing admins to manage all listings while company reps update their own profiles. It includes a public page with search and filters for discovering and connecting with emerging health businesses.",
+    image: "/src/assets/nagoya-landing.webp",
+    categories: "Multi-tenant Platform, Engineering, Product Design, UI/UX",
+    features: [
+      "/src/assets/nagoya-1.webp",
+      "/src/assets/nagoya-2.webp",
+      "/src/assets/nagoya-3.webp"
+    ],
+    techStack: ["Vue.js", "Nuxt.js", "Php", "Laravel", "PostgreSQL"],
+    keyFeatures: ["Multi-tenant architecture", "Portfolio management", "Admin controls", "Search and filtering", "Company profiles"]
   }
 ])
 
@@ -204,6 +241,10 @@ const openModal = (project: Project) => {
 const closeModal = () => {
   selectedProject.value = null
   document.body.style.overflow = 'auto'
+}
+
+const openLink = (url: string) => {
+  window.open(url, '_blank')
 }
 </script>
 

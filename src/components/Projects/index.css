@@ -181,12 +181,46 @@
   margin-top: 2rem;
 }
 
+.modal-title-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
 .project-summary h1 {
   font-size: 4rem;
   font-weight: 700;
-  margin: 0 0 2rem 0;
+  margin: 0;
   line-height: 1.1;
   color: white;
+  flex: 1;
+}
+
+.modal-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+  flex-shrink: 0;
+}
+
+.modal-arrow:hover {
+  transform: scale(1.2);
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.modal-arrow svg {
+  color: white;
+  transition: all 0.3s ease;
 }
 
 .project-description {
