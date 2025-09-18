@@ -505,6 +505,23 @@
     margin-top: 1rem;
     align-self: flex-start;
   }
+
+  .image-enlarged-content {
+    padding: 2rem 1rem;
+  }
+
+  .image-enlarged {
+    max-width: 95%;
+    max-height: 90%;
+  }
+
+  .image-close-button {
+    top: 1rem;
+    right: 1rem;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
 }
 
 @media screen and (min-width: 835px) {
