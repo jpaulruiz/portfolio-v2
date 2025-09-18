@@ -118,6 +118,7 @@
                   <img
                     :src="image"
                     :alt="`Feature ${index + 1}`"
+                    @click="enlargeImage(image)"
                   >
                   <p class="image-description">
                     <template v-if="selectedProject.title === 'Nagoya Catalogue App'">
@@ -132,6 +133,29 @@
             </div>
           </div>
         </article>
+      </div>
+    </Teleport>
+
+    <Teleport to="body">
+      <div
+        v-if="enlargedImage"
+        class="image-enlarged-overlay"
+        @click="closeEnlargedImage"
+      >
+        <div class="image-enlarged-content">
+          <button
+            class="image-close-button"
+            aria-label="Close enlarged image"
+            @click="closeEnlargedImage"
+          >
+            ×
+          </button>
+          <img
+            :src="enlargedImage"
+            alt="Enlarged view"
+            class="image-enlarged"
+          >
+        </div>
       </div>
     </Teleport>
   </section>
@@ -155,6 +179,7 @@ interface Project {
 }
 
 const selectedProject = ref<Project | null>(null)
+const enlargedImage = ref<string | null>(null)
 
 const projects = ref<Project[]>(projectsData)
 
@@ -170,6 +195,16 @@ const closeModal = () => {
 
 const openLink = (url: string) => {
   window.open(url, '_blank')
+}
+
+const enlargeImage = (imageSrc: string) => {
+  enlargedImage.value = imageSrc
+  document.body.style.overflow = 'hidden'
+}
+
+const closeEnlargedImage = () => {
+  enlargedImage.value = null
+  document.body.style.overflow = selectedProject.value ? 'hidden' : 'auto'
 }
 </script>
 

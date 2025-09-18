@@ -20,6 +20,27 @@
       <p class="current-focus-text">
         My main focus right now is working with various AI-related projects, building on my experience.
       </p>
+
+      <a
+        href="/src/RUIZJOHNPAUL.pdf"
+        target="_blank"
+        class="resume-link"
+      >
+        view résumé
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M7 7h10v10" />
+          <path d="m7 17 10-10" />
+        </svg>
+      </a>
       
       <p class="skills-text">
         HTML, JavaScript, TypeScript, CSS, SCSS, SASS, Tailwind, Vue, Nuxt, React, Next, Scala, Java, Php, Laravel, MySQL, PostgreSQL, Supabase, CI/CD, Docker, Rest APIs, WebSocket, AI
@@ -93,6 +114,33 @@ const animateNameHighlight = () => {
   font-weight: normal;
   margin-bottom: 1rem;
   color: rgba(255, 255, 255, 0.9);
+}
+
+.resume-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: normal;
+  transition: color 0.3s ease;
+  cursor: pointer;
+  text-align: right;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.resume-link:hover {
+  color: #D81E5B;
+}
+
+.resume-link:hover svg {
+  transform: scale(1.3);
+}
+
+.resume-link svg {
+  transition: transform 0.3s ease;
 }
 
 .skills-text {
