@@ -119,11 +119,18 @@
   width: 100vw;
   height: 100vh;
   z-index: 9999;
-  overflow: hidden;
+  overflow: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .modal-overlay {
+    height: 100vh;
+    overflow-y: auto;
+  }
 }
 
 .modal-background {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -134,10 +141,9 @@
 .modal-content {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   animation: modalSlideIn 0.3s ease-out;
 }
 
@@ -163,7 +169,7 @@
 .modal-layout {
   display: flex;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   padding: 4rem;
   box-sizing: border-box;
 }
@@ -172,7 +178,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  gap: 2rem;
   padding-right: 4rem;
   max-width: 50%;
 }
@@ -233,10 +239,6 @@
 
 .tech-stack-footer {
   margin-bottom: 2rem;
-}
-
-.tech-stack-footer h4 {
-  display: none;
 }
 
 .tech-list {
@@ -305,7 +307,7 @@
   height: 200px;
   object-fit: cover;
   border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .image-description {
@@ -420,8 +422,6 @@
 
   .images-container {
     gap: 2rem;
-    max-height: 60vh;
-    overflow-y: auto;
     padding-right: 1rem;
   }
 
@@ -431,6 +431,16 @@
 
   .tech-stack-footer {
     margin-top: 2rem;
+  }
+
+  .modal-title-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .modal-arrow {
+    margin-top: 1rem;
+    align-self: flex-start;
   }
 }
 

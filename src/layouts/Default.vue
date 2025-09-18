@@ -42,7 +42,7 @@
 
 <script lang="ts" setup>
 import Navigation from '../components/Navigation/index.vue'
-import common from '../common.json'
+import common from '../data/common.json'
 import MediaLinks from '../components/MediaLinks/index.vue'
 import FlowingRibbons from '../components/FlowingRibbons/index.vue'
 import { ref, onMounted, computed } from 'vue'

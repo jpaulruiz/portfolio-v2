@@ -46,7 +46,7 @@
 </template>
 
 <script lang="ts" setup>
-import Experiences from '../../experience.json'
+import Experiences from "../../data/experience.json"
 
 const openWebsite = (url?: string) => {
   if (url) {
