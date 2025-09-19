@@ -13,6 +13,12 @@ export default defineConfig({
     vue()
   ],
   ssgOptions: {
-    formatting: 'prettify'
+    formatting: 'prettify',
+    crittersOptions: {
+      reduceInlineStyles: false,
+    },
+    includedRoutes(paths) {
+      return paths.filter(i => i.indexOf('__') === -1)
+    }
   }
 })

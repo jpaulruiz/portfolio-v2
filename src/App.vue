@@ -45,6 +45,7 @@ useSeoMeta({
   ogDescription: 'Portfolio of John Paul Ruiz - Full Stack Engineer specializing in Vue.js, React.js, TypeScript, Java, Scala, PHP, Laravel, Play Framework, and modern web development.',
   ogType: 'website',
   ogUrl: 'https://www.johnpaulruiz.com',
+  ogImage: 'https://www.johnpaulruiz.com/assets/logo.png',
   ogImageAlt: 'John Paul Ruiz Portfolio',
   ogSiteName: 'John Paul Ruiz Portfolio',
   
