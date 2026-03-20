@@ -27,7 +27,7 @@
     ],
     "techStack": ["React.js", "Next.js", "TypeScript", "Tailwind", "PostgreSQL", "Prisma", "AI", "Video HLS"],
     "keyFeatures": ["AI candidate matching", "Multi-tenant architecture", "Smart interview scheduling", "ML-powered analytics", "Automated screening"],
-    "link": "https://hire.mango.nyc"
+    "link": "https://hiregrade.ai"
   },
   {
     "title": "Clockme App",
